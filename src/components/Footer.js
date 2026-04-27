@@ -3,24 +3,25 @@
 import Link from 'next/link';
 
 export default function Footer() {
+  const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
     <footer className="footer-global">
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <img src="/media/ZoriLogoFooter.png" alt="Zoraida Psicóloga" className="footer-logo" />
+            <img src={`${BASE}/media/ZoriLogoFooter.png`} alt="Zoraida Psicóloga" className="footer-logo" />
             <p className="subtitle">Especialista en psicología infantil, adolescentes y adultos.</p>
             <div className="brand-contact">
               <a href="tel:+34692642252">
-                <img src="/media/PhoneIcon.png" alt="" className="footer-icon" />
+                <img src={`${BASE}/media/PhoneIcon.png`} alt="" className="footer-icon" />
                 +34 692 64 22 52
               </a>
               <a href="mailto:info@zoraidapsicologa.com">
-                <img src="/media/MailIcon.png" alt="" className="footer-icon" />
+                <img src={`${BASE}/media/MailIcon.png`} alt="" className="footer-icon" />
                 info@zoraidapsicologa.com
               </a>
               <a href="https://www.instagram.com/zoripsico/" target="_blank" rel="noopener noreferrer">
-                <img src="/media/IgIcon.png" alt="" className="footer-icon" />
+                <img src={`${BASE}/media/IgIcon.png`} alt="" className="footer-icon" />
                 Instagram
               </a>
             </div>

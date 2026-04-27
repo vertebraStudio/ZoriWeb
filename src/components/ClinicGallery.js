@@ -2,11 +2,13 @@
 
 import { useState, useEffect, useRef } from 'react';
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 const photos = [
-  { id: 1, src: '/media/rec6.png', alt: 'Sala de Consulta 1' },
-  { id: 2, src: '/media/rec7.png', alt: 'Recepción' },
-  { id: 3, src: '/media/rec8.png', alt: 'Sala de Espera' },
-  { id: 4, src: '/media/rec10.png', alt: 'Detalle de la consulta' }
+  { id: 1, src: `${BASE}/media/rec6.png`, alt: 'Sala de Consulta 1' },
+  { id: 2, src: `${BASE}/media/rec7.png`, alt: 'Recepción' },
+  { id: 3, src: `${BASE}/media/rec8.png`, alt: 'Sala de Espera' },
+  { id: 4, src: `${BASE}/media/rec10.png`, alt: 'Detalle de la consulta' }
 ];
 
 export default function ClinicGallery() {
