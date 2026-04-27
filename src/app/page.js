@@ -32,15 +32,10 @@ export default function Home() {
                 {/* Optional: Add an actual image here later */}
               </div>
               <div className="about-content">
-                <h3>Directa, empática y profesional</h3>
-                <p>Soy Zoraida, psicóloga colegiada en Granada. Mi labor se centra en ofrecer un espacio seguro y especializado para el crecimiento emocional de niños, adolescentes y adultos.</p>
-                <p>Entiendo que cada etapa vital tiene sus propios desafíos. Por ello, adapto mi metodología para trabajar de forma efectiva tanto en el desarrollo infantil y juvenil como en las problemáticas propias de la adultez, siempre desde una base científica y humana.</p>
-                <ul style={{marginTop: '20px', listStyle: 'disc', paddingLeft: '20px'}}>
-                  <li>Psicología Infantil y Juvenil.</li>
-                  <li>Terapia para Adultos.</li>
-                  <li>Especialista en Gestión Emocional y Ansiedad.</li>
-                  <li>Consulta en zona Ronda, Granada.</li>
-                </ul>
+                <h3>¡Hola! Soy Zoraida, aunque puedes llamarme Zori</h3>
+                <p>Soy psicóloga especializada en infancia, adolescencia, jóvenes, adultos y familias. Me considero una persona sensible, algo que valoro profundamente en mi trabajo, porque creo que sentir y comprender nuestras emociones con intensidad nos permite vivir, conocer y conectar mejor con la persona que tengo delante. Como dice Miriam Tirado, es un súper poder.</p>
+                <p>Los pacientes valoran de mí que trasmito calma, comprensión sin juicios, atención plena y creatividad. Además, suelen mencionar que mis terapias son distendidas, donde se ríe y se llora cada vez que es necesario.</p>
+                <p>Me apasionan los momentos de calma, las conversaciones profundas, el deporte y la naturaleza. Los animales y las plantas forman parte esencial de mi vida. Además, valoro las relaciones interpersonales sanas que mantengo con amigos, familia...</p>
               </div>
             </div>
           </div>
