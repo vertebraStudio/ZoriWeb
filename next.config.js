@@ -4,7 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // basePath: '/ZoriWeb', // Let GitHub Actions handle this
+  trailingSlash: true,
+  basePath: '/ZoriWeb',
 };
 
 module.exports = nextConfig;
