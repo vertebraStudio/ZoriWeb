@@ -12,7 +12,7 @@ export default function ContactoPage() {
       <Header solid={true} />
       <main className="contact-page fade-in">
         <section className="contact-hero" style={{ 
-          backgroundImage: 'linear-gradient(rgba(211, 152, 207, 0.4), rgba(240, 235, 248, 0.5)), url("/ZoriWeb/media/rec7.png")',
+          backgroundImage: `linear-gradient(rgba(211, 152, 207, 0.45), rgba(211, 152, 207, 0.45)), url("${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec7.png")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: 'calc(80px + var(--header-height)) 5% 80px',

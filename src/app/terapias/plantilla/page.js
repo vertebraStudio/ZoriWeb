@@ -15,7 +15,7 @@ export default function TerapiaPlantillaPage() {
       {/* Hero Section para la Terapia */}
       <main className="therapy-page fade-in">
         <section className="therapy-hero" style={{ 
-          backgroundImage: 'linear-gradient(rgba(211, 152, 207, 0.45), rgba(211, 152, 207, 0.45)), url("/ZoriWeb/media/rec1.png")',
+          backgroundImage: `linear-gradient(rgba(211, 152, 207, 0.45), rgba(211, 152, 207, 0.45)), url("${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec1.png")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           padding: 'calc(80px + var(--header-height)) 5% 80px',
@@ -49,14 +49,14 @@ export default function TerapiaPlantillaPage() {
               </div>
               
               <div className="therapy-image-container glass">
-                <img src="/ZoriWeb/media/rec10.png" alt="Sesión de terapia" className="therapy-block-image" />
+                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec10.png`} alt="Sesión de terapia" className="therapy-block-image" />
               </div>
             </div>
 
             {/* Bloque 2: Beneficios (Imagen a la izquierda, Texto a la derecha) */}
             <div className="therapy-grid-block reveal">
               <div className="therapy-image-container glass">
-                <img src="/ZoriWeb/media/rec11.png" alt="Detalle de consulta" className="therapy-block-image" />
+                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec11.png`} alt="Detalle de consulta" className="therapy-block-image" />
               </div>
 
               <div className="therapy-text-content">

@@ -23,13 +23,13 @@ export default function Header({ solid = false }) {
         <div className="logo">
           <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
             <img 
-              src="/media/ZoriLogo2.png" 
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ZoriLogo2.png`} 
               alt="Zoraida Psicóloga" 
               className="logo-desktop"
               style={{ height: '65px', width: 'auto' }} 
             />
             <img 
-              src="/media/ZoriLogo.png" 
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ZoriLogo.png`} 
               alt="Zoraida Psicóloga" 
               className="logo-mobile"
               style={{ height: '40px', width: 'auto' }} 

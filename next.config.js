@@ -1,4 +1,4 @@
-const isProd = process.env.NODE_ENV === 'production';
+const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -7,8 +7,11 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  basePath: isProd ? '/ZoriWeb' : '',
-  assetPrefix: isProd ? '/ZoriWeb/' : '',
+  basePath: isGitHubPages ? '/ZoriWeb' : '',
+  assetPrefix: isGitHubPages ? '/ZoriWeb/' : '',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGitHubPages ? '/ZoriWeb' : '',
+  },
 };
 
 module.exports = nextConfig;
