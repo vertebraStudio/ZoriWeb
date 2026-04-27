@@ -27,7 +27,7 @@ export default function Home() {
             <div className="about-grid">
               <div className="about-image" style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <img 
-                  src="/media/ProfilePic.jpg" 
+                  src="/ZoriWeb/media/ProfilePic.jpg" 
                   alt="Zoraida - Psicóloga" 
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
@@ -131,19 +131,19 @@ export default function Home() {
 
             <div className="terapias-grid">
               <Link href="/terapias/infantil" className="therapy-card">
-                <img src="/media/rec1.png" alt="Terapia Infantil" className="therapy-image" />
+                <img src="/ZoriWeb/media/rec1.png" alt="Terapia Infantil" className="therapy-image" />
                 <div className="therapy-title-overlay">Terapia Infantil</div>
               </Link>
               <Link href="/terapias/adolescentes" className="therapy-card">
-                <img src="/media/rec2.png" alt="Terapia para Adolescentes" className="therapy-image" />
+                <img src="/ZoriWeb/media/rec2.png" alt="Terapia para Adolescentes" className="therapy-image" />
                 <div className="therapy-title-overlay">Terapia para Adolescentes</div>
               </Link>
               <Link href="/terapias/adultos" className="therapy-card">
-                <img src="/media/rec4.png" alt="Terapia para Adultos" className="therapy-image" />
+                <img src="/ZoriWeb/media/rec4.png" alt="Terapia para Adultos" className="therapy-image" />
                 <div className="therapy-title-overlay">Terapia para Adultos</div>
               </Link>
               <Link href="/terapias/pareja" className="therapy-card">
-                <img src="/media/rec5.png" alt="Terapia de Pareja" className="therapy-image" />
+                <img src="/ZoriWeb/media/rec5.png" alt="Terapia de Pareja" className="therapy-image" />
                 <div className="therapy-title-overlay">Terapia de Pareja</div>
               </Link>
             </div>

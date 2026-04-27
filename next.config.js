@@ -8,6 +8,7 @@ const nextConfig = {
   },
   trailingSlash: true,
   basePath: isProd ? '/ZoriWeb' : '',
+  assetPrefix: isProd ? '/ZoriWeb/' : '',
 };
 
 module.exports = nextConfig;
