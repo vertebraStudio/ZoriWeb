@@ -29,7 +29,8 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
   background-color: var(--white);
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
 
 h1, h2, h3 {
@@ -121,9 +122,16 @@ section {
 /* About Section */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 35% 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: stretch;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
 .about-content h3 {
@@ -132,11 +140,151 @@ section {
   color: var(--text);
 }
 
+.about-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.about-content p:last-child {
+  margin-bottom: 0;
+}
+
 .about-image {
   background-color: var(--primary-light);
   border-radius: 20px;
-  height: 400px;
+  height: auto;
   width: 100%;
+  overflow: hidden;
+}
+
+/* Milestones Grid */
+.milestones-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.milestone-card {
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid var(--primary-light);
+}
+
+.milestone-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.milestone-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.milestone-card h4 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: var(--text);
+}
+
+.milestone-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Mi Terapia Section */
+.mi-terapia {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.therapy-intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.formation-box {
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--primary-light);
+  background: var(--glass);
+}
+
+.formation-box h3 {
+  color: var(--primary);
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+}
+
+.logo-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .logo-desktop {
+    display: none;
+  }
+  .logo-mobile {
+    display: block;
+  }
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.formation-list {
+  list-style: none;
+  padding: 0;
+}
+
+.formation-list li {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.formation-list li:last-child {
+  margin-bottom: 0;
+}
+
+.formation-icon {
+  font-size: 1.5rem;
+  background: var(--primary-light);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.formation-list strong {
+  display: block;
+  font-size: 1.1rem;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.formation-list p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@media (max-width: 968px) {
+  .therapy-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 }
 
 /* Terapias Section */
@@ -145,6 +293,57 @@ section {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   margin-top: 40px;
+}
+
+.therapy-grid-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.therapy-block-title {
+  color: var(--text);
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+}
+
+.therapy-image-container {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.therapy-block-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .therapy-grid-block {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .therapy-grid-block > div {
+    order: 2; /* Text first usually, but check image container below */
+  }
+  
+  .therapy-image-container {
+    order: 1 !important; /* Image on top in mobile */
+  }
+
+  .therapy-block-image {
+    height: 300px;
+  }
+
+  .therapy-block-title {
+    font-size: 1.8rem;
+  }
 }
 
 .therapy-card {
@@ -162,13 +361,15 @@ section {
   transform: translateY(-5px);
 }
 
-.therapy-image-placeholder {
+.therapy-image {
   width: 100%;
   height: 100%;
-  background-color: #E2E8F0; /* Soft gray for placeholder */
-  background-image: repeating-linear-gradient(45deg, #E2E8F0 25%, transparent 25%, transparent 75%, #E2E8F0 75%, #E2E8F0), repeating-linear-gradient(45deg, #E2E8F0 25%, #CBD5E1 25%, #CBD5E1 75%, #E2E8F0 75%, #E2E8F0);
-  background-position: 0 0, 10px 10px;
-  background-size: 20px 20px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.therapy-card:hover .therapy-image {
+  transform: scale(1.05);
 }
 
 .therapy-title-overlay {
@@ -176,18 +377,39 @@ section {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 40px 20px 20px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  padding: 15px;
+  background-color: var(--primary);
   color: white;
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   text-align: center;
-  transition: padding-bottom 0.3s ease;
+  transition: var(--transition);
 }
 
 .therapy-card:hover .therapy-title-overlay {
   padding-bottom: 25px; /* Slight lift effect on text */
 }
+
+/* Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1s ease, transform 0.8s ease;
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .reveal {
+    transform: none; /* No movement on mobile to prevent jumpy scroll */
+    transition: opacity 0.8s ease;
+  }
+}
+
 
 /* Experiences Section */
 .experiences-grid {

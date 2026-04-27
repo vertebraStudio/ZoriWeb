@@ -9,11 +9,13 @@ export const metadata = {
 export default function ContactoPage() {
   return (
     <>
-      <Header />
+      <Header solid={true} />
       <main className="contact-page fade-in">
         <section className="contact-hero" style={{ 
-          backgroundColor: 'var(--soft-purple)', 
-          padding: 'calc(60px + var(--header-height)) 5% 60px',
+          backgroundImage: 'linear-gradient(rgba(211, 152, 207, 0.4), rgba(211, 152, 207, 0.4)), linear-gradient(rgba(240, 235, 248, 0.7), rgba(240, 235, 248, 0.7)), url("/media/rec7.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          padding: 'calc(80px + var(--header-height)) 5% 80px',
           textAlign: 'center' 
         }}>
           <div className="container">

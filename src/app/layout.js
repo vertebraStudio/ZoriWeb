@@ -1,4 +1,5 @@
 import "./globals.css";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata = {
   title: "Zoraida | Psicóloga en Granada | Infantil, Adolescentes y Adultos",
@@ -61,6 +62,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
+        <ScrollReveal />
         {children}
       </body>
     </html>

@@ -2,11 +2,11 @@
 
 import { useState, useEffect, useRef } from 'react';
 
-const placeholders = [
-  { id: 1, color: 'linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%)', text: 'Sala de Consulta 1' },
-  { id: 2, color: 'linear-gradient(to top, #fff1eb 0%, #ace0f9 100%)', text: 'Recepción' },
-  { id: 3, color: 'linear-gradient(120deg, #f6d365 0%, #fda085 100%)', text: 'Sala de Espera' },
-  { id: 4, color: 'linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%)', text: 'Detalle de la consulta' }
+const photos = [
+  { id: 1, src: '/media/rec6.png', alt: 'Sala de Consulta 1' },
+  { id: 2, src: '/media/rec7.png', alt: 'Recepción' },
+  { id: 3, src: '/media/rec8.png', alt: 'Sala de Espera' },
+  { id: 4, src: '/media/rec10.png', alt: 'Detalle de la consulta' }
 ];
 
 export default function ClinicGallery() {
@@ -15,11 +15,11 @@ export default function ClinicGallery() {
   const timerRef = useRef(null);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % placeholders.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + placeholders.length) % placeholders.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + photos.length) % photos.length);
   };
 
   useEffect(() => {
@@ -43,11 +43,9 @@ export default function ClinicGallery() {
               className="carousel-track" 
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {placeholders.map((item) => (
+              {photos.map((item) => (
                 <div key={item.id} className="carousel-slide">
-                  <div className="placeholder-image" style={{ background: item.color }}>
-                    <span>{item.text}</span>
-                  </div>
+                  <img src={item.src} alt={item.alt} className="gallery-image" />
                 </div>
               ))}
             </div>
@@ -56,7 +54,7 @@ export default function ClinicGallery() {
           <button className="carousel-btn next" onClick={nextSlide} aria-label="Siguiente">›</button>
 
           <div className="carousel-dots">
-            {placeholders.map((_, index) => (
+            {photos.map((_, index) => (
               <button 
                 key={index} 
                 className={`dot ${index === currentIndex ? 'active' : ''}`}
@@ -99,16 +97,10 @@ export default function ClinicGallery() {
           height: 100%;
         }
 
-        .placeholder-image {
+        .gallery-image {
           width: 100%;
           height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-weight: 600;
-          color: var(--text-muted);
-          font-size: 1.2rem;
-          border: 1px solid rgba(0,0,0,0.05);
+          object-fit: cover;
         }
 
         .carousel-btn {

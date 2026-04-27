@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-export default function Header() {
+export default function Header({ solid = false }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -18,14 +18,21 @@ export default function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className={`header glass ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`header glass ${isScrolled || solid ? 'scrolled' : ''}`}>
       <div className="container header-container">
         <div className="logo">
           <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
             <img 
               src="/media/ZoriLogo2.png" 
               alt="Zoraida Psicóloga" 
+              className="logo-desktop"
               style={{ height: '65px', width: 'auto' }} 
+            />
+            <img 
+              src="/media/ZoriLogo.png" 
+              alt="Zoraida Psicóloga" 
+              className="logo-mobile"
+              style={{ height: '40px', width: 'auto' }} 
             />
           </Link>
         </div>
