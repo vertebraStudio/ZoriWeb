@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/ZoriWeb',
+  // basePath: '/ZoriWeb', // Let GitHub Actions handle this
 };
 
-export default nextConfig;
+module.exports = nextConfig;
