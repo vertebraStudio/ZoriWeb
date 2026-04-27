@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV === 'production';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
@@ -5,7 +7,7 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  basePath: '/ZoriWeb',
+  basePath: isProd ? '/ZoriWeb' : '',
 };
 
 module.exports = nextConfig;
