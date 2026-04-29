@@ -139,28 +139,36 @@ export default function Header({ solid = false }) {
 
         @media (max-width: 900px) {
           .nav {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            height: 100vh;
+            position: absolute;
+            top: 100%;
+            left: 0;
             width: 100%;
+            max-height: 0;
+            overflow: hidden;
             background: white;
-            transition: var(--transition);
+            transition: all 0.4s ease-in-out;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
           }
 
           .nav-open {
-            right: 0;
+            max-height: 600px;
+            padding-top: 20px;
+            padding-bottom: 40px;
           }
 
           .nav ul {
             flex-direction: column;
-            gap: 30px;
+            gap: 25px;
+            align-items: flex-start;
+            width: 100%;
           }
 
-          .nav a { font-size: 1.5rem; }
+          .nav a { font-size: 1.3rem; }
 
           .menu-toggle { display: flex; }
           .desktop-cta { display: none; }

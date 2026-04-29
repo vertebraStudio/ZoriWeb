@@ -119,6 +119,20 @@ section {
   margin-top: 20px;
 }
 
+/* Page Heroes (Contact, Therapies, etc) */
+.page-hero {
+  padding: calc(80px + var(--header-height)) 5% 80px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: calc(30px + var(--header-height)) 5% 40px;
+  }
+}
+
 /* About Section */
 .about-grid {
   display: grid;
@@ -197,7 +211,7 @@ section {
 
 /* Mi Terapia Section */
 .mi-terapia {
-  padding: 80px 0;
+  padding: 80px 5%;
   background-color: var(--white);
 }
 
@@ -280,10 +294,31 @@ section {
   margin: 0;
 }
 
+.therapy-title {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.therapy-text p {
+  margin-bottom: 1.5rem;
+}
+
+.therapy-text p:last-child {
+  margin-bottom: 0;
+}
+
 @media (max-width: 968px) {
+  .mi-terapia {
+    padding: 60px 5%;
+  }
+
   .therapy-intro-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 40px;
+  }
+  
+  .formation-box {
+    padding: 25px 20px;
   }
 }
 
@@ -494,7 +529,69 @@ footer {
   .content-block.reverse .image-placeholder {
     order: 0 !important;
   }
-  .terapias-grid { grid-template-columns: 1fr; }
+  
+  .terapias-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 10px 5% 30px;
+    margin: 30px -5% 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .terapias-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .therapy-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+  }
+
+  .experiences-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+    padding: 10px 5% 30px;
+    margin: 0 -5%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .experiences-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .experience-card {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+  }
+
+  /* Animations for Carousel Cards */
+  .reveal .therapy-card, 
+  .reveal .experience-card {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .reveal.active .therapy-card, 
+  .reveal.active .experience-card {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal.active .therapy-card:nth-child(1) { transition-delay: 0.1s; }
+  .reveal.active .therapy-card:nth-child(2) { transition-delay: 0.2s; }
+  .reveal.active .therapy-card:nth-child(3) { transition-delay: 0.3s; }
+  .reveal.active .therapy-card:nth-child(4) { transition-delay: 0.4s; }
+
+  .reveal.active .experience-card:nth-child(1) { transition-delay: 0.1s; }
+  .reveal.active .experience-card:nth-child(2) { transition-delay: 0.2s; }
+  .reveal.active .experience-card:nth-child(3) { transition-delay: 0.3s; }
 }
 
 /* Glassmorphism Classes */

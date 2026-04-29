@@ -14,12 +14,8 @@ export default function TerapiaPlantillaPage() {
       
       {/* Hero Section para la Terapia */}
       <main className="therapy-page fade-in">
-        <section className="therapy-hero" style={{ 
-          backgroundImage: `linear-gradient(rgba(211, 152, 207, 0.45), rgba(211, 152, 207, 0.45)), url("${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec1.png")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          padding: 'calc(80px + var(--header-height)) 5% 80px',
-          textAlign: 'center' 
+        <section className="therapy-hero page-hero" style={{ 
+          backgroundImage: `linear-gradient(rgba(211, 152, 207, 0.45), rgba(211, 152, 207, 0.45)), url("${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec1.png")`
         }}>
           <div className="container">
             <h1 className="section-title" style={{ marginBottom: '15px' }}>Nombre de la Terapia</h1>

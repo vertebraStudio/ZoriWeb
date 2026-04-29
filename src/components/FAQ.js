@@ -36,7 +36,7 @@ export default function FAQ() {
     <section id="faq" className="faq">
       <div className="container">
         <h2 className="section-title">Preguntas Frecuentes</h2>
-        <p className="section-subtitle">Resolvemos tus dudas principales antes de comenzar el proceso terapéutico.</p>
+        <p className="section-subtitle">Resuelvo tus dudas principales antes de comenzar el proceso terapéutico.</p>
         
         <div className="faq-list">
           {faqs.map((faq, index) => (

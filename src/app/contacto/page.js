@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "Contacto | Zoraida | Psicóloga en Granada",
-  description: "Ponte en contacto con Zoraida, psicóloga en Granada. Solicita tu primera cita o resuelve tus dudas a través de nuestro formulario o información de contacto.",
+  description: "Ponte en contacto con Zoraida, psicóloga en Granada. Solicita tu primera cita o resuelve tus dudas a través de mi formulario o información de contacto.",
 };
 
 export default function ContactoPage() {
@@ -11,12 +11,8 @@ export default function ContactoPage() {
     <>
       <Header solid={true} />
       <main className="contact-page fade-in">
-        <section className="contact-hero" style={{ 
-          backgroundImage: `linear-gradient(rgba(211, 152, 207, 0.45), rgba(211, 152, 207, 0.45)), url("${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec7.png")`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          padding: 'calc(80px + var(--header-height)) 5% 80px',
-          textAlign: 'center' 
+        <section className="contact-hero page-hero" style={{ 
+          backgroundImage: `linear-gradient(rgba(211, 152, 207, 0.45), rgba(211, 152, 207, 0.45)), url("${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec7.png")`
         }}>
           <div className="container">
             <h1 className="section-title" style={{ marginBottom: '15px' }}>Contacto</h1>

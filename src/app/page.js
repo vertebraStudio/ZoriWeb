@@ -22,7 +22,7 @@ export default function Home() {
         </section>
 
         {/* SOBRE MÍ SECTION */}
-        <section id="sobre-mi" className="about reveal">
+        <section id="sobre-mi" className="about reveal" style={{ position: 'relative', overflow: 'hidden' }}>
           <div className="container">
             <div className="about-grid">
               <div className="about-image" style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -42,6 +42,14 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Ola decorativa inferior */}
+          <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', lineHeight: 0, pointerEvents: 'none' }}>
+            <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ display: 'block', width: '100%', height: '80px' }}>
+              <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="var(--primary)" fillOpacity="0.18" />
+              <path d="M0,55 C360,10 720,80 1080,30 C1260,10 1380,50 1440,55 L1440,80 L0,80 Z" fill="var(--primary)" fillOpacity="0.30" />
+            </svg>
+          </div>
         </section>
 
         {/* TRAYECTORIA SECTION */}
@@ -51,32 +59,56 @@ export default function Home() {
               <div className="about-content" style={{ textAlign: 'left', justifyContent: 'center' }}>
                 <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '30px' }}>Mi trayectoria</h2>
                 <p>
-                  Me gradué en Psicología por la Universidad de Granada (UGR) y continué mi especialización con el Máster en Psicología General Sanitaria (UAL) en la Universidad de Almería, con especial énfasis en Psicología Clínica y Neuropsicológica.
+                  Me gradué en Psicología por la <strong>Universidad de Granada (UGR)</strong> y continué mi especialización con el <strong>Máster en Psicología General Sanitaria (UAL)</strong> en la Universidad de Almería, con especial énfasis en <strong>Psicología Clínica y Neuropsicológica</strong>.
                 </p>
                 <p>
-                  Además colaboré con la universidad en su propia clínica psicológica y realicé una beca de atención a la diversidad funcional. He trabajado en Madrid en una clínica multidisciplinar, en Granada en la clínica donde realicé las prácticas y ahora estoy en Granada capital.
+                  Además colaboré con la universidad en su propia clínica psicológica y realicé una <strong>beca de atención a la diversidad funcional</strong>. He trabajado en Madrid en una clínica multidisciplinar, en Granada en la clínica donde realicé las prácticas y ahora estoy en Granada capital.
                 </p>
               </div>
               <div className="milestones-grid">
-                <div className="milestone-card glass">
-                  <span className="milestone-icon">🎓</span>
-                  <h4>Grado Psicología</h4>
-                  <p>Universidad de Granada</p>
+                <div className="milestone-card glass" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                  <img 
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/gradoPsicologia.png`} 
+                    alt="Grado Psicología" 
+                    style={{ width: '100%', height: '180px', objectFit: 'cover', objectPosition: 'top' }}
+                  />
+                  <div style={{ padding: '15px', textAlign: 'center' }}>
+                    <h4 style={{ fontSize: '1rem', marginBottom: '5px', color: 'var(--text)' }}>Grado Psicología</h4>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>Universidad de Granada</p>
+                  </div>
                 </div>
-                <div className="milestone-card glass">
-                  <span className="milestone-icon">📚</span>
-                  <h4>Máster Sanitario</h4>
-                  <p>Univ. de Almería</p>
+                <div className="milestone-card glass" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                  <img 
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/masterSanitario.png`} 
+                    alt="Máster Sanitario" 
+                    style={{ width: '100%', height: '180px', objectFit: 'cover', objectPosition: 'center' }}
+                  />
+                  <div style={{ padding: '15px', textAlign: 'center' }}>
+                    <h4 style={{ fontSize: '1rem', marginBottom: '5px', color: 'var(--text)' }}>Máster Sanitario</h4>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>Univ. de Almería</p>
+                  </div>
                 </div>
-                <div className="milestone-card glass">
-                  <span className="milestone-icon">🧠</span>
-                  <h4>Especialidad</h4>
-                  <p>Clínica y Neuropsicológica</p>
+                <div className="milestone-card glass" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                  <img 
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/cerebro.png`} 
+                    alt="Especialidad" 
+                    style={{ width: '100%', height: '180px', objectFit: 'cover', objectPosition: 'center' }}
+                  />
+                  <div style={{ padding: '15px', textAlign: 'center' }}>
+                    <h4 style={{ fontSize: '1rem', marginBottom: '5px', color: 'var(--text)' }}>Especialidad</h4>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>Clínica y Neuropsicológica</p>
+                  </div>
                 </div>
-                <div className="milestone-card glass">
-                  <span className="milestone-icon">📍</span>
-                  <h4>Experiencia</h4>
-                  <p>Madrid & Granada</p>
+                <div className="milestone-card glass" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                  <img 
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/experiencia.png`} 
+                    alt="Experiencia" 
+                    style={{ width: '100%', height: '180px', objectFit: 'cover', objectPosition: 'center' }}
+                  />
+                  <div style={{ padding: '15px', textAlign: 'center' }}>
+                    <h4 style={{ fontSize: '1rem', marginBottom: '5px', color: 'var(--text)' }}>Experiencia</h4>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>Madrid & Granada</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -84,11 +116,11 @@ export default function Home() {
         </section>
 
         {/* MI TERAPIA SECTION */}
-        <section id="mi-terapia" className="mi-terapia reveal">
+        <section id="mi-terapia" className="mi-terapia reveal" style={{ position: 'relative', overflow: 'hidden' }}>
           <div className="container">
             <div className="therapy-intro-grid">
               <div className="therapy-text">
-                <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '20px' }}>Mi terapia</h2>
+                <h2 className="section-title therapy-title">Mi terapia</h2>
                 <p>Mi terapia se basa en la <strong>Terapia de Aceptación y Compromiso (ACT)</strong>, que nos ayuda a reconocer nuestras emociones y pensamientos como válidos, sin tener que cambiarlos.</p>
                 <p>Lo importante es decidir qué hacer con estas emociones y pensamientos: si dejarnos llevar por ellos y que nos limiten, o si —a pesar de ellos— continuar haciendo lo que es importante para nosotros.</p>
                 <p>Es una terapia de tercera generación, que cuenta con una base científica amplia en la psicología clínica actual.</p>
@@ -121,13 +153,21 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Nueva ola decorativa inferior (patrón diferente) */}
+          <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', lineHeight: 0, pointerEvents: 'none' }}>
+            <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ display: 'block', width: '100%', height: '100px' }}>
+              <path d="M0,50 C480,100 960,0 1440,50 L1440,100 L0,100 Z" fill="var(--primary)" fillOpacity="0.12" />
+              <path d="M0,70 C360,90 720,40 1080,80 C1260,100 1380,70 1440,60 L1440,100 L0,100 Z" fill="var(--primary)" fillOpacity="0.22" />
+            </svg>
+          </div>
         </section>
 
         {/* TERAPIAS SECTION */}
-        <section id="terapias" className="terapias reveal">
+        <section id="terapias" className="terapias reveal" style={{ backgroundColor: 'var(--off-white)' }}>
           <div className="container">
-            <h2 className="section-title">Nuestros servicios</h2>
-            <p className="section-subtitle">Conoce nuestras áreas de especialidad y encuentra el apoyo que necesitas.</p>
+            <h2 className="section-title">Mis servicios</h2>
+            <p className="section-subtitle">Conoce mis áreas de especialidad y encuentra el apoyo que necesitas.</p>
 
             <div className="terapias-grid">
               <Link href="/terapias/infantil" className="therapy-card">
@@ -151,7 +191,7 @@ export default function Home() {
         </section>
 
         {/* EXPERIENCIAS SECTION */}
-        <section id="experiencias" className="experiences" style={{ backgroundColor: 'var(--off-white)' }}>
+        <section id="experiencias" className="experiences" style={{ backgroundColor: 'var(--white)' }}>
           <div className="container">
             <h2 className="section-title">Experiencias</h2>
             <p className="section-subtitle">Lo que dicen las personas que han confiado en mi proceso terapéutico.</p>

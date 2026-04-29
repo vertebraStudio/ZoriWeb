@@ -1,5 +1,6 @@
 import "./globals.css";
 import ScrollReveal from "@/components/ScrollReveal";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata = {
   title: "Zoraida | Psicóloga en Granada | Infantil, Adolescentes y Adultos",
@@ -64,6 +65,7 @@ export default function RootLayout({ children }) {
       <body>
         <ScrollReveal />
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );
