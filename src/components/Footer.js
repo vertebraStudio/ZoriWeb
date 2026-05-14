@@ -11,14 +11,17 @@ export default function Footer() {
           <div className="footer-brand">
             <img src={`${BASE}/media/ZoriLogoFooter.png`} alt="Zoraida Psicóloga" className="footer-logo" />
             <p className="subtitle">Especialista en psicología infantil, adolescentes y adultos.</p>
+            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '20px' }}>
+              Nº colegiada AO-12108 | NICA 63321
+            </div>
             <div className="brand-contact">
               <a href="tel:+34692642252">
                 <img src={`${BASE}/media/PhoneIcon.png`} alt="" className="footer-icon" />
                 +34 692 64 22 52
               </a>
-              <a href="mailto:info@zoraidapsicologa.com">
+              <a href="mailto:zoripsico@gmail.com">
                 <img src={`${BASE}/media/MailIcon.png`} alt="" className="footer-icon" />
-                info@zoraidapsicologa.com
+                zoripsico@gmail.com
               </a>
               <a href="https://www.instagram.com/zoripsico/" target="_blank" rel="noopener noreferrer">
                 <img src={`${BASE}/media/IgIcon.png`} alt="" className="footer-icon" />
@@ -38,10 +41,10 @@ export default function Footer() {
 
       <style jsx>{`
         .footer-global {
-          background-color: var(--soft-purple);
-          border-top: 1px solid var(--primary-light);
+          background-color: #0E525D;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
           padding: 60px 0 30px;
-          color: var(--text);
+          color: white;
         }
 
         .container {
@@ -69,10 +72,10 @@ export default function Footer() {
         }
 
         .subtitle {
-          color: var(--text);
+          color: rgba(255, 255, 255, 0.9);
           font-size: 0.95rem;
           margin-top: 5px;
-          margin-bottom: 25px;
+          margin-bottom: 15px;
         }
 
         .brand-contact a {
@@ -80,7 +83,7 @@ export default function Footer() {
           align-items: center;
           gap: 12px;
           margin-bottom: 15px;
-          color: var(--text);
+          color: rgba(255, 255, 255, 0.9);
           text-decoration: none;
           font-size: 0.95rem;
           transition: var(--transition);
@@ -88,34 +91,36 @@ export default function Footer() {
 
         .brand-contact a:hover {
           color: var(--primary);
+          transform: translateX(5px);
         }
 
         .footer-bottom {
           text-align: center;
           padding-top: 30px;
-          border-top: 1px solid rgba(0, 0, 0, 0.05);
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-links {
           margin-top: 10px;
           font-size: 0.85rem;
-          color: var(--text-muted);
+          color: rgba(255, 255, 255, 0.6);
         }
 
         .footer-links a {
-          color: var(--text-muted);
+          color: rgba(255, 255, 255, 0.6);
           text-decoration: none;
           margin: 0 5px;
         }
         
         .footer-links a:hover {
-          color: var(--primary);
+          color: white;
         }
 
         .footer-icon {
           width: 24px;
           height: 24px;
           object-fit: contain;
+          filter: brightness(0) invert(1); /* Force icons to be white */
         }
 
         @media (max-width: 768px) {

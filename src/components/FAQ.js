@@ -5,11 +5,11 @@ import { useState } from 'react';
 const faqs = [
   {
     question: "¿Qué duración tiene cada sesión?",
-    answer: "Las sesiones individuales suelen tener una duración aproximada de 50 a 60 minutos. En el caso de la terapia infantil, este tiempo puede variar ligeramente dependiendo de las necesidades del niño y la dinámica de la sesión."
+    answer: <>Las sesiones duran <strong>una hora</strong> normalmente. Con niños, los padres entran los primeros 15 minutos para establecer nuevos objetivos y los últimos 15 minutos para ver lo que hemos realizado en sesión.</>
   },
   {
     question: "¿Cómo puedo pedir mi primera cita?",
-    answer: "Puedes solicitar tu primera cita a través del formulario de contacto de esta web, enviando un correo electrónico o llamando directamente por teléfono. Te responderé lo antes posible para coordinar un día y hora que te venga bien."
+    answer: "Por la mañana puedes llamarme de 10 a 13h. Si no, lo mejor y más rápido es un WhatsApp, te responderé lo antes posible."
   },
   {
     question: "¿Realizas terapia online o solo presencial?",

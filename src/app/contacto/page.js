@@ -61,7 +61,7 @@ export default function ContactoPage() {
                     </li>
                     <li>
                       <span className="icon">✉️</span> 
-                      <a href="mailto:info@zoraidapsicologa.com">info@zoraidapsicologa.com</a>
+                      <a href="mailto:zoripsico@gmail.com">zoripsico@gmail.com</a>
                     </li>
                     <li>
                       <span className="icon">⏰</span> 

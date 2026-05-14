@@ -1,6 +1,7 @@
 import "./globals.css";
 import ScrollReveal from "@/components/ScrollReveal";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata = {
   title: "Zoraida | Psicóloga en Granada | Infantil, Adolescentes y Adultos",
@@ -27,7 +28,7 @@ export default function RootLayout({ children }) {
     "image": "https://zoriweb.es/logo.png", // Placeholder
     "@id": "https://zoriweb.es",
     "url": "https://zoriweb.es",
-    "telephone": "+34 600 000 000",
+    "telephone": "+34 692 64 22 52",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Calle Pintor Zuloaga, 3, local 2",
@@ -66,6 +67,7 @@ export default function RootLayout({ children }) {
         <ScrollReveal />
         {children}
         <WhatsAppButton />
+        <ScrollToTop />
       </body>
     </html>
   );
