@@ -6,6 +6,7 @@ import Link from 'next/link';
 export default function Header({ solid = false }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,7 +16,21 @@ export default function Header({ solid = false }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    if (isMenuOpen) {
+      setIsMobileDropdownOpen(false);
+    }
+  };
+
+  const handleDropdownClick = (e) => {
+    if (window.innerWidth <= 900) {
+      e.preventDefault();
+      setIsMobileDropdownOpen(!isMobileDropdownOpen);
+    } else {
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <header className={`header ${isScrolled || solid ? 'scrolled' : ''}`}>
@@ -38,17 +53,17 @@ export default function Header({ solid = false }) {
         </div>
                <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul>
-            <li><Link href="/" onClick={() => setIsMenuOpen(false)}>Inicio</Link></li>
-            <li><Link href="/#sobre-mi" onClick={() => setIsMenuOpen(false)}>Sobre mí</Link></li>
-            <li className="has-dropdown">
-              <Link href="/#terapias" className="dropdown-trigger" onClick={() => setIsMenuOpen(false)}>
-                Terapias <span className="arrow">▾</span>
+            <li><Link href="/" onClick={() => { setIsMenuOpen(false); setIsMobileDropdownOpen(false); }}>Inicio</Link></li>
+            <li><Link href="/#sobre-mi" onClick={() => { setIsMenuOpen(false); setIsMobileDropdownOpen(false); }}>Sobre mí</Link></li>
+            <li className={`has-dropdown ${isMobileDropdownOpen ? 'mobile-dropdown-open' : ''}`}>
+              <Link href="/#terapias" className="dropdown-trigger" onClick={handleDropdownClick}>
+                Terapias <span className={`arrow ${isMobileDropdownOpen ? 'rotated' : ''}`}>▾</span>
               </Link>
               <div className="dropdown-card">
                 <div className="dropdown-inner">
-                  <Link href="/terapias/adultos" onClick={() => setIsMenuOpen(false)}>Psicología para adultos</Link>
-                  <Link href="/terapias/infantil" onClick={() => setIsMenuOpen(false)}>Psicología infantil</Link>
-                  <Link href="/terapias/adolescentes" onClick={() => setIsMenuOpen(false)}>Psicología para adolescentes</Link>
+                  <Link href="/terapias/adultos" onClick={() => { setIsMenuOpen(false); setIsMobileDropdownOpen(false); }}>Psicología para adultos</Link>
+                  <Link href="/terapias/infantil" onClick={() => { setIsMenuOpen(false); setIsMobileDropdownOpen(false); }}>Psicología infantil</Link>
+                  <Link href="/terapias/adolescentes" onClick={() => { setIsMenuOpen(false); setIsMobileDropdownOpen(false); }}>Psicología para adolescentes</Link>
                 </div>
               </div>
             </li>
@@ -285,27 +300,61 @@ export default function Header({ solid = false }) {
           .nav ul {
             flex-direction: column;
             gap: 20px;
-            align-items: flex-start;
+            align-items: stretch;
             width: 100%;
           }
 
-          .dropdown-card {
-            position: static;
-            transform: none;
+          .nav ul li {
             width: 100%;
-            opacity: 1;
-            visibility: visible;
-            box-shadow: none;
-            padding: 0;
-            margin-top: 10px;
-            display: block;
+            box-sizing: border-box;
+          }
+
+          /* Hide dropdown by default on mobile, show only when class active */
+          .has-dropdown .dropdown-card {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+          }
+
+          .has-dropdown.mobile-dropdown-open .dropdown-card {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            transform: none !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            box-shadow: none !important;
+            padding: 4px 0 0 12px !important;
+            margin-top: 6px !important;
+            display: block !important;
+            overflow: hidden !important;
+            background: transparent !important;
+            border-radius: 0 !important;
+            z-index: auto !important;
+          }
+
+          .has-dropdown.mobile-dropdown-open .arrow {
+            transform: rotate(180deg);
+            color: var(--primary);
+          }
+
+          .dropdown-inner {
+            width: 100%;
           }
 
           .dropdown-inner :global(a) {
-            padding: 8px 0;
+            padding: 10px 12px !important;
+            font-size: 0.95rem !important;
+            border-radius: 10px !important;
+            white-space: normal !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            display: block !important;
           }
 
-          .nav a { font-size: 1.1rem; }
+          .nav a { font-size: 1.05rem; }
 
           .menu-toggle { display: flex; }
           .desktop-cta { display: none; }

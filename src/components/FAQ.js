@@ -20,6 +20,14 @@ const faqs = [
     answer: "Sí, estoy especializada en psicología infantil y juvenil. Trabajo con una metodología adaptada a cada rango de edad, involucrando también a las familias en el proceso para asegurar un desarrollo integral y duradero."
   },
   {
+    question: "¿Trabajas con adultos?",
+    answer: "Sí, por supuesto. Acompaño a adultos en sesiones individuales para abordar la ansiedad, el estrés, la autoestima, el duelo, la gestión de emociones o crisis vitales, ayudándote a construir herramientas basadas en la Terapia de Aceptación y Compromiso."
+  },
+  {
+    question: "¿Trabajas con parejas?",
+    answer: "Sí, realizo terapia familiar y acompaño en dificultades de relación y de pareja, ya sea mediante sesiones de intervención familiar o en procesos individuales enfocados a mejorar tus vínculos y comunicación."
+  },
+  {
     question: "¿Qué precio tienen las sesiones?",
     answer: "Para consultar las tarifas actuales y posibles bonos de sesiones, puedes contactar conmigo directamente. Estaré encantada de informarte de forma detallada sobre la inversión en tu salud emocional o la de tu familia."
   }

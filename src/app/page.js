@@ -72,80 +72,148 @@ export default function Home() {
                 <p>Los pacientes valoran de mí que trasmito calma, comprensión sin juicios, atención plena y creatividad. Además, suelen mencionar que mis terapias son distendidas, donde se ríe y se llora cada vez que es necesario.</p>
                 <p>Me apasionan los momentos de calma, las conversaciones profundas, el deporte y la naturaleza. Los animales y las plantas forman parte esencial de mi vida. Además, valoro las relaciones interpersonales sanas que mantengo con amigos, familia...</p>
 
-                {/* Badges decorativos */}
-                <div className="about-badges" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '30px' }}>
-                  <span className="badge badge-dark">AO-12108 &nbsp; Nº Colegiada</span>
-                  <span className="badge badge-dark">NICA 63321</span>
-                  <span className="badge badge-light-blue">Niños, adolescentes y adultos</span>
-                  <span className="badge badge-light-peach">Online y presencial</span>
-                </div>
               </div>
             </div>
           </div>
-
         </section>
 
         {/* TRAYECTORIA SECTION */}
         <section id="trayectoria" className="trayectoria reveal" style={{ backgroundColor: 'var(--off-white)', position: 'relative', overflow: 'hidden' }}>
           <div className="container">
-            <div className="about-grid">
-              <div className="about-content" style={{ textAlign: 'left', justifyContent: 'center' }}>
-                <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '30px' }}>Mi trayectoria</h2>
-                <p>
+            <div className="trayectoria-grid">
+              <div className="trayectoria-content">
+                <span className="trayectoria-subtitle">— Formación</span>
+                <h2 className="trayectoria-title">Formación clínica, sanitaria y neuropsicológica.</h2>
+                <p className="trayectoria-text">
                   Me gradué en Psicología por la <strong>Universidad de Granada (UGR)</strong> y continué mi especialización con el <strong>Máster en Psicología General Sanitaria (UAL)</strong> en la Universidad de Almería, con especial énfasis en <strong>Psicología Clínica y Neuropsicológica</strong>.
                 </p>
-                <p>
+                <p className="trayectoria-text">
                   Además colaboré con la universidad en su propia clínica psicológica y realicé una <strong>beca de atención a la diversidad funcional</strong>. He trabajado en Madrid en una clínica multidisciplinar, en Granada en la clínica donde realicé las prácticas y ahora estoy en Granada capital.
                 </p>
               </div>
-              <div className="milestones-grid">
-                <div className="milestone-card glass" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid #e0e0e0', borderRadius: '16px' }}>
-                  <img 
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/gradoPsicologia.png`} 
-                    alt="Grado Psicología" 
-                    style={{ width: '100%', height: '180px', objectFit: 'cover', objectPosition: 'top' }}
-                  />
-                  <div style={{ padding: '15px', textAlign: 'center' }}>
-                    <h4 style={{ fontSize: '1rem', marginBottom: '5px', color: 'var(--text)' }}>Grado Psicología</h4>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>Universidad de Granada</p>
+              <div className="trayectoria-list">
+                <div className="trayectoria-card glass">
+                  <span className="trayectoria-card-num">01</span>
+                  <div className="trayectoria-card-content">
+                    <h4 className="trayectoria-card-title">Grado Psicología</h4>
+                    <p className="trayectoria-card-desc">Universidad de Granada</p>
                   </div>
                 </div>
-                <div className="milestone-card glass" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid #e0e0e0', borderRadius: '16px' }}>
-                  <img 
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/masterSanitario.png`} 
-                    alt="Máster Sanitario" 
-                    style={{ width: '100%', height: '180px', objectFit: 'cover', objectPosition: 'center' }}
-                  />
-                  <div style={{ padding: '15px', textAlign: 'center' }}>
-                    <h4 style={{ fontSize: '1rem', marginBottom: '5px', color: 'var(--text)' }}>Máster Sanitario</h4>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>Univ. de Almería</p>
+                <div className="trayectoria-card glass">
+                  <span className="trayectoria-card-num">02</span>
+                  <div className="trayectoria-card-content">
+                    <h4 className="trayectoria-card-title">Máster Sanitario</h4>
+                    <p className="trayectoria-card-desc">Universidad de Almería</p>
                   </div>
                 </div>
-                <div className="milestone-card glass" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid #e0e0e0', borderRadius: '16px' }}>
-                  <img 
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/cerebro.png`} 
-                    alt="Especialidad" 
-                    style={{ width: '100%', height: '180px', objectFit: 'cover', objectPosition: 'center' }}
-                  />
-                  <div style={{ padding: '15px', textAlign: 'center' }}>
-                    <h4 style={{ fontSize: '1rem', marginBottom: '5px', color: 'var(--text)' }}>Especialidad</h4>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>Clínica y Neuropsicológica</p>
+                <div className="trayectoria-card glass">
+                  <span className="trayectoria-card-num">03</span>
+                  <div className="trayectoria-card-content">
+                    <h4 className="trayectoria-card-title">Especialidad</h4>
+                    <p className="trayectoria-card-desc">Clínica y Neuropsicológica</p>
                   </div>
                 </div>
-                <div className="milestone-card glass" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', border: '1px solid #e0e0e0', borderRadius: '16px' }}>
-                  <img 
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/experiencia.png`} 
-                    alt="Experiencia" 
-                    style={{ width: '100%', height: '180px', objectFit: 'cover', objectPosition: 'center' }}
-                  />
-                  <div style={{ padding: '15px', textAlign: 'center' }}>
-                    <h4 style={{ fontSize: '1rem', marginBottom: '5px', color: 'var(--text)' }}>Experiencia</h4>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>Madrid & Granada</p>
+                <div className="trayectoria-card glass">
+                  <span className="trayectoria-card-num">04</span>
+                  <div className="trayectoria-card-content">
+                    <h4 className="trayectoria-card-title">Experiencia</h4>
+                    <p className="trayectoria-card-desc">Madrid & Granada</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <style jsx>{`
+            .trayectoria-grid {
+              display: grid;
+              grid-template-columns: 1fr 1.1fr;
+              gap: 80px;
+              align-items: center;
+            }
+            .trayectoria-content {
+              text-align: left;
+            }
+            .trayectoria-subtitle {
+              font-size: 0.85rem;
+              font-weight: 600;
+              letter-spacing: 2px;
+              color: #0E525D;
+              text-transform: uppercase;
+              margin-bottom: 15px;
+              display: block;
+            }
+            .trayectoria-title {
+              font-size: 2.6rem;
+              line-height: 1.25;
+              color: var(--text);
+              margin-bottom: 24px;
+              font-family: 'Sabon', 'EB Garamond', serif;
+            }
+            .trayectoria-text {
+              font-size: 1.05rem;
+              line-height: 1.7;
+              color: var(--text);
+              margin-bottom: 20px;
+            }
+            .trayectoria-text:last-child {
+              margin-bottom: 0;
+            }
+            .trayectoria-list {
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+            }
+            .trayectoria-card {
+              background: var(--glass);
+              backdrop-filter: blur(10px);
+              -webkit-backdrop-filter: blur(10px);
+              padding: 22px 28px;
+              display: flex;
+              align-items: center;
+              gap: 24px;
+              border: 1px solid rgba(14, 82, 93, 0.15);
+              border-radius: 16px;
+              transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            }
+            .trayectoria-card:hover {
+              transform: translateY(-3px);
+              border-color: #0E525D;
+              box-shadow: 0 10px 25px rgba(14, 82, 93, 0.08);
+            }
+            .trayectoria-card-num {
+              font-size: 1.15rem;
+              font-weight: 600;
+              color: #0E525D;
+              font-family: 'Sabon', 'EB Garamond', serif;
+              opacity: 0.9;
+              min-width: 25px;
+            }
+            .trayectoria-card-content {
+              text-align: left;
+            }
+            .trayectoria-card-title {
+              font-size: 1.15rem;
+              margin-bottom: 4px;
+              color: var(--text);
+              font-family: 'Sabon', 'EB Garamond', serif;
+              font-weight: 600;
+            }
+            .trayectoria-card-desc {
+              font-size: 0.9rem;
+              color: var(--text-muted);
+              margin: 0;
+            }
+            @media (max-width: 992px) {
+              .trayectoria-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+              }
+              .trayectoria-title {
+                font-size: 2.2rem;
+              }
+            }
+          `}</style>
 
           {/* Ola decorativa inferior movida aquí */}
           <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', lineHeight: 0, pointerEvents: 'none' }}>
@@ -305,17 +373,17 @@ export default function Home() {
             <p className="section-subtitle">Lo que dicen las personas que han confiado en mi proceso terapéutico.</p>
 
             <div className="experiences-grid">
-              <div className="experience-card glass">
+              <div className="experience-card">
                 <div className="stars">★★★★★</div>
                 <p>"Zoraida tiene una conexión increíble con los niños. Mi hijo ha mejorado muchísimo en su gestión emocional gracias a ella."</p>
                 <span className="experience-author">— Laura R.</span>
               </div>
-              <div className="experience-card glass">
+              <div className="experience-card">
                 <div className="stars">★★★★★</div>
                 <p>"Como adolescente, me sentí escuchado y comprendido desde el primer momento. Me ha ayudado mucho con mis problemas de instituto."</p>
                 <span className="experience-author">— Pablo M.</span>
               </div>
-              <div className="experience-card glass">
+              <div className="experience-card">
                 <div className="stars">★★★★★</div>
                 <p>"Buscaba una psicóloga en Granada para adultos y encontré en Zoraida la guía perfecta para superar mi ansiedad."</p>
                 <span className="experience-author">— Elena S.</span>

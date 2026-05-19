@@ -108,29 +108,51 @@ export default function ClinicGallery() {
         .carousel-btn {
           position: absolute;
           top: 50%;
-          transform: translateY(-50%);
-          background: var(--glass);
-          border: none;
-          width: 50px;
-          height: 50px;
+          background: rgba(255, 255, 255, 0.85);
+          backdrop-filter: blur(4px);
+          border: 1px solid rgba(14, 82, 93, 0.15);
+          width: 42px;
+          height: 42px;
           border-radius: 50%;
-          font-size: 2rem;
+          font-size: 1.5rem;
           cursor: pointer;
           z-index: 10;
-          color: var(--primary);
-          transition: var(--transition);
+          color: #0E525D;
+          transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
           display: flex;
           align-items: center;
           justify-content: center;
+          opacity: 0;
+          pointer-events: none;
+        }
+
+        .carousel-wrapper:hover .carousel-btn {
+          opacity: 1;
+          pointer-events: auto;
         }
 
         .carousel-btn:hover {
-          background: var(--primary);
+          background: #0E525D;
           color: var(--white);
+          border-color: #0E525D;
+          transform: translateY(-50%) scale(1.05);
         }
 
-        .prev { left: -25px; }
-        .next { right: -25px; }
+        .prev { 
+          left: 20px; 
+          transform: translateY(-50%) translateX(-15px);
+        }
+        .next { 
+          right: 20px; 
+          transform: translateY(-50%) translateX(15px);
+        }
+
+        .carousel-wrapper:hover .prev {
+          transform: translateY(-50%) translateX(0);
+        }
+        .carousel-wrapper:hover .next {
+          transform: translateY(-50%) translateX(0);
+        }
 
         .carousel-dots {
           display: flex;
@@ -140,23 +162,37 @@ export default function ClinicGallery() {
         }
 
         .dot {
-          width: 12px;
-          height: 12px;
+          width: 10px;
+          height: 10px;
           border-radius: 50%;
-          background: #ddd;
+          background: rgba(14, 82, 93, 0.2);
           border: none;
           cursor: pointer;
           transition: var(--transition);
         }
 
         .dot.active {
-          background: var(--primary);
+          background: #0E525D;
           transform: scale(1.2);
         }
 
-        @media (max-width: 1100px) {
-          .prev { left: 10px; }
-          .next { right: 10px; }
+        @media (max-width: 768px) {
+          .carousel-btn {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+            width: 36px;
+            height: 36px;
+            font-size: 1.3rem;
+            background: rgba(255, 255, 255, 0.95);
+          }
+          .prev { 
+            left: 10px; 
+            transform: translateY(-50%) !important; 
+          }
+          .next { 
+            right: 10px; 
+            transform: translateY(-50%) !important; 
+          }
         }
 
         @media (max-width: 600px) {

@@ -459,27 +459,45 @@ section {
 }
 
 .experience-card {
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-  border: 1px solid var(--primary-light);
+  background-color: var(--white);
+  padding: 40px 35px;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.experience-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 40px rgba(211, 152, 207, 0.15); /* smooth premium glow in theme color */
 }
 
 .experience-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 24px;
   font-style: italic;
-  margin-bottom: 15px;
 }
 
 .experience-author {
+  font-family: 'Sabon', 'EB Garamond', serif;
+  font-size: 1.15rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--text);
+  display: block;
 }
 
 .stars {
-  color: #F9E79F; /* Soft Pastel Yellow */
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-  letter-spacing: 2px;
+  color: #F5B041; /* Premium Warm Gold */
+  font-size: 1.15rem;
+  margin-bottom: 18px;
+  letter-spacing: 3px;
 }
 
 /* Contact Section */
@@ -770,4 +788,62 @@ footer {
   .therapy-layout > div:last-child {
     position: static !important;
   }
+}
+
+/* Legal Pages Styles */
+.legal-content p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-size: 0.97rem;
+}
+.legal-content ul {
+  color: var(--text-muted);
+  line-height: 1.8;
+  padding-left: 20px;
+  margin-bottom: 16px;
+  font-size: 0.97rem;
+}
+.legal-content ul li {
+  margin-bottom: 8px;
+}
+.legal-content a {
+  color: #0E525D;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.legal-content a:hover {
+  color: var(--text);
+}
+
+/* Legal Sections and Mobile Margins */
+.legal-section-header {
+  background-color: var(--off-white);
+  padding: 80px 5% 30px;
+}
+.legal-section-body {
+  background-color: white;
+  padding: 60px 5% 80px;
+}
+
+@media (max-width: 768px) {
+  .legal-section-header {
+    padding: 50px 24px 20px;
+  }
+  .legal-section-body {
+    padding: 30px 24px 60px;
+  }
+}
+
+/* Contact Page Styles */
+.contact-card-link {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-card-link:hover {
+  background-color: white !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-color: rgba(14, 82, 93, 0.15) !important;
+  transform: translateY(-2px);
 }
