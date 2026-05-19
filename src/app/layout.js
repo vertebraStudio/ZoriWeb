@@ -51,8 +51,8 @@ export default function RootLayout({ children }) {
         "Thursday",
         "Friday"
       ],
-      "opens": "09:00",
-      "closes": "20:00"
+      "opens": "15:00",
+      "closes": "21:00"
     }
   };
 

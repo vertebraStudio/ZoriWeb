@@ -35,7 +35,7 @@ export default function GoogleMap() {
   if (consentState === "accepted") {
     return (
       <iframe
-        src="https://maps.google.com/maps?q=Zoraida%20psicol%C3%B3loga%20Granada,%20C.%20Pintor%20Zuloaga,%203,%20local%202,%20Ronda,%2018005%20Granada&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        src="https://maps.google.com/maps?q=Calle%20Pintor%20Zuloaga,%203,%20local,%2018005%20Granada&t=&z=16&ie=UTF8&iwloc=&output=embed"
         width="100%"
         height="100%"
         style={{ border: 0, borderRadius: "15px" }}

@@ -147,7 +147,7 @@ export default function ContactoPage() {
                     <div>
                       <p style={{ fontWeight: 600, fontSize: '1.05rem', color: 'var(--text)', margin: '0 0 6px' }}>Llamada telefónica</p>
                       <p style={{ fontSize: '0.9rem', lineHeight: '1.6', color: 'var(--text-muted)', margin: 0 }}>
-                        Si prefieres hablar directamente para explicarme tu caso o agendar. De lunes a viernes, de 09:00 a 20:00.
+                        Si prefieres hablar directamente para explicarme tu caso o agendar. De lunes a viernes, de 15:00 a 21:00.
                       </p>
                     </div>
                     <span style={{ fontSize: '0.8rem', fontWeight: 600, color: '#0E525D', marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -329,7 +329,7 @@ export default function ContactoPage() {
                   }}>⏰</div>
                   <div>
                     <p style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text)', margin: '0 0 2px' }}>Horario</p>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.6 }}>Lunes a Viernes<br />09:00 – 20:00</p>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.6 }}>Lunes a Viernes<br />15:00 – 21:00</p>
                   </div>
                 </div>
               </div>
