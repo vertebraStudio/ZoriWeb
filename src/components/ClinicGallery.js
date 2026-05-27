@@ -5,10 +5,11 @@ import { useState, useEffect, useRef } from 'react';
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const photos = [
-  { id: 1, src: `${BASE}/media/rec6.png`, alt: 'Sala de Consulta 1' },
-  { id: 2, src: `${BASE}/media/rec7.png`, alt: 'Recepción' },
-  { id: 3, src: `${BASE}/media/rec8.png`, alt: 'Sala de Espera' },
-  { id: 4, src: `${BASE}/media/rec10.png`, alt: 'Detalle de la consulta' }
+  { id: 1, src: `${BASE}/media/consulta1.jpeg`, alt: 'Nuestra Consulta - Recepción' },
+  { id: 2, src: `${BASE}/media/consulta2.jpeg`, alt: 'Nuestra Consulta - Sala de Espera' },
+  { id: 3, src: `${BASE}/media/consulta3.jpeg`, alt: 'Nuestra Consulta - Detalle' },
+  { id: 4, src: `${BASE}/media/consulta4.jpeg`, alt: 'Nuestra Consulta - Sala de Terapia' },
+  { id: 5, src: `${BASE}/media/consulta5.jpeg`, alt: 'Nuestra Consulta - Espacio Infantil/Juvenil' }
 ];
 
 export default function ClinicGallery() {

@@ -11,6 +11,9 @@ const statements = [
   "Tus emociones son válidas",
   "El cambio empieza por dentro",
   "Cuidarte no es egoísmo",
+  "Lo que sientes es importante",
+  "Pedir ayuda es de valientes y de querer avanzar",
+  "En la familia el amor y la comprensión son esenciales",
 ];
 
 export default function MarqueeBand() {

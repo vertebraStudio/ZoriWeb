@@ -30,6 +30,14 @@ const faqs = [
   {
     question: "¿Qué precio tienen las sesiones?",
     answer: "Para consultar las tarifas actuales y posibles bonos de sesiones, puedes contactar conmigo directamente. Estaré encantada de informarte de forma detallada sobre la inversión en tu salud emocional o la de tu familia."
+  },
+  {
+    question: "¿Haces evaluaciones?",
+    answer: "Sí, tales como problemas de aprendizaje, déficit de atención, autoestima, depresión, ansiedad, trastorno obsesivo compulsivo, trastorno negativista desafiante, trastorno límite de la personalidad, entre otros."
+  },
+  {
+    question: "¿Llevas becas de necesidades especiales?",
+    answer: "Sí, de reeducación pedagógica. Además, te asesoro en cómo funcionan: tramitación, facturación, burocracia, entre otros."
   }
 ];
 
