@@ -293,7 +293,7 @@ export default function ContactoPage() {
                 </div>
                 <hr style={{ border: 'none', borderTop: '1px solid #eee', marginBottom: '16px' }} />
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '4px' }}>Nº colegiada AO-12108</p>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '10px' }}>NICA 63321</p>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '10px' }}>NICA 59834</p>
                 <p style={{ fontSize: '0.85rem', color: 'var(--accent)', fontWeight: 500 }}>
                   <a href="https://www.instagram.com/zoripsico/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
                     @zoripsico
@@ -318,7 +318,7 @@ export default function ContactoPage() {
                   }}>📍</div>
                   <div>
                     <p style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text)', margin: '0 0 2px' }}>Dirección</p>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.6 }}>C. Pintor Zuloaga, 3, local 2<br />18005 Granada</p>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.6 }}>Clínica VIDICO<br />C. Félix Rodríguez de la Fuente, 27, Local 3<br />Zaidín, 18006 Granada</p>
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>

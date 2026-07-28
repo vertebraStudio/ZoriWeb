@@ -35,7 +35,7 @@ export default function GoogleMap() {
   if (consentState === "accepted") {
     return (
       <iframe
-        src="https://maps.google.com/maps?q=Calle%20Pintor%20Zuloaga,%203,%20local,%2018005%20Granada&t=&z=16&ie=UTF8&iwloc=&output=embed"
+        src="https://maps.google.com/maps?q=Cl%C3%ADnica%20VIDICO,%20C.%20F%C3%A9lix%20Rodr%C3%ADguez%20de%20la%20Fuente,%2027,%2018006%20Granada&t=&z=16&ie=UTF8&iwloc=&output=embed"
         width="100%"
         height="100%"
         style={{ border: 0, borderRadius: "15px" }}

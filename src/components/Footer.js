@@ -16,7 +16,7 @@ export default function Footer() {
                 Nº Colegiada AO-12108
               </span>
               <span style={{ fontSize: '0.78rem', letterSpacing: '0.5px', fontWeight: 600, padding: '4px 12px', borderRadius: '50px', background: 'transparent', border: '1px solid rgba(255, 255, 255, 0.3)', color: 'rgba(255, 255, 255, 0.85)' }}>
-                NICA 63321
+                NICA 59834
               </span>
             </div>
           </div>

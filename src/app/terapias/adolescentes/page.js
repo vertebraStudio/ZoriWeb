@@ -147,7 +147,7 @@ export default function AdolescentesPage() {
                 </div>
                 <hr style={{ border: 'none', borderTop: '1px solid #eee', marginBottom: '16px' }} />
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '4px' }}>Nº colegiada AO-12108</p>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '10px' }}>NICA 63321</p>
+                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '10px' }}>NICA 59834</p>
                 <p style={{ fontSize: '0.85rem', color: 'var(--accent)', fontWeight: 500 }}>
                   <a href="https://www.instagram.com/zoripsico/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>
                     @zoripsico

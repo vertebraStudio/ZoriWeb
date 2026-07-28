@@ -30,7 +30,7 @@ export default function PrivacidadPage() {
                   ["Titular / Responsable", "Zoraida García Rodríguez"],
                   ["Actividad", "Psicóloga General Sanitaria"],
                   ["Nº de Colegiada", "AO-12108 (Colegio Oficial de Psicólogos de Andalucía Oriental)"],
-                  ["Dirección", "C. Pintor Zuloaga, 3, local 2, 18005 Granada"],
+                  ["Dirección", "Clínica VIDICO, C. Félix Rodríguez de la Fuente, 27, Local 3, Zaidín, 18006 Granada"],
                   ["Email de contacto", "zoripsico@gmail.com"],
                   ["Teléfono", "+34 692 64 22 52"],
                 ]} />

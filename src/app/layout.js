@@ -32,9 +32,9 @@ export default function RootLayout({ children }) {
     "telephone": "+34 692 64 22 52",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Calle Pintor Zuloaga, 3, local 2",
+      "streetAddress": "Clínica VIDICO, C. Félix Rodríguez de la Fuente, 27, Local 3",
       "addressLocality": "Granada",
-      "postalCode": "18005",
+      "postalCode": "18006",
       "addressCountry": "ES"
     },
     "geo": {
