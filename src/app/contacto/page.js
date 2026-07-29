@@ -6,6 +6,9 @@ import ContactHero from "./ContactHero";
 export const metadata = {
   title: "Contacto | Zoraida | Psicóloga en Granada",
   description: "Ponte en contacto con Zoraida, psicóloga en Granada. Solicita tu primera cita o resuelve tus dudas por teléfono, email o WhatsApp.",
+  alternates: {
+    canonical: "/contacto/",
+  },
 };
 
 export default function ContactoPage() {
@@ -253,7 +256,7 @@ export default function ContactoPage() {
                   ¿Cómo llegar?
                 </h2>
                 <p style={{ lineHeight: '1.9', fontSize: '1rem', marginBottom: '24px', color: 'var(--text-muted)' }}>
-                  Mi consulta se encuentra en la zona de Ronda, en Granada — un entorno accesible y tranquilo.
+                  Mi consulta se encuentra en el barrio del Zaidín, en Granada — un entorno accesible y tranquilo.
                 </p>
                 <div style={{
                   width: '100%',

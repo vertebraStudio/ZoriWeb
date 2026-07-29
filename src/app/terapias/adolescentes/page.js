@@ -6,6 +6,9 @@ import AdolescentesHero from './AdolescentesHero';
 export const metadata = {
   title: "Psicología para Adolescentes | Zoraida | Psicóloga en Granada",
   description: "Acompañamiento psicológico para jóvenes en la etapa de la adolescencia. Un espacio de calma y seguridad para afrontar retos emocionales.",
+  alternates: {
+    canonical: "/terapias/adolescentes/",
+  },
 };
 
 export default function AdolescentesPage() {

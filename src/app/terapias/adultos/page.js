@@ -6,6 +6,9 @@ import AdultosHero from './AdultosHero';
 export const metadata = {
   title: "Psicología para Adultos | Zoraida | Psicóloga en Granada",
   description: "Terapia psicológica para adultos en Granada. Ansiedad, depresión, terapia de pareja, duelo, gestión del estrés y acompañamiento en crisis vitales.",
+  alternates: {
+    canonical: "/terapias/adultos/",
+  },
 };
 
 const servicios = [

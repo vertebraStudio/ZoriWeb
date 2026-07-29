@@ -3,18 +3,51 @@ import ScrollReveal from "@/components/ScrollReveal";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieBanner from "@/components/CookieBanner";
+import { SITE_URL, CONTACT, CLINIC } from "@/lib/site";
+
+const OG_IMAGE = {
+  url: "/og-image.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Zoraida García, psicóloga, en su consulta de Granada",
+};
 
 export const metadata = {
-  title: "Zoraida | Psicóloga en Granada | Infantil, Adolescentes y Adultos",
-  description: "Psicóloga en Granada especializada en terapia infantil, adolescentes y adultos en la zona de Ronda. Consulta profesional para ansiedad, depresión y gestión emocional. ¡Pide tu cita hoy!",
-  keywords: ["psicóloga Granada", "psicología infantil Granada", "psicólogo adolescentes Granada", "terapia adultos Granada", "Zoraida psicóloga"],
+  metadataBase: new URL(SITE_URL),
+  title: "Psicóloga en Granada | Zoraida García | Infantil y Adultos",
+  description:
+    "Psicóloga en Granada especializada en terapia infantil, adolescentes y adultos. Consulta en el Zaidín y sesiones online. Pide tu cita.",
+  keywords: [
+    "psicóloga Granada",
+    "psicología infantil Granada",
+    "psicólogo adolescentes Granada",
+    "terapia adultos Granada",
+    "psicóloga Zaidín",
+    "Zoraida García psicóloga",
+  ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Zoraida | Psicóloga en Granada",
-    description: "Terapia profesional para todas las etapas de la vida en el corazón de Granada.",
-    url: "https://zoriweb.es", // Placeholder
-    siteName: "Zoraida Psicóloga",
+    title: "Zoraida García | Psicóloga en Granada",
+    description:
+      "Terapia infantil, de adolescentes y de adultos en Granada. Consulta en el Zaidín y sesiones online.",
+    url: "/",
+    siteName: "Zoraida García | Psicóloga en Granada",
     locale: "es_ES",
     type: "website",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Zoraida García | Psicóloga en Granada",
+    description:
+      "Terapia infantil, de adolescentes y de adultos en Granada. Consulta en el Zaidín y sesiones online.",
+    images: [OG_IMAGE.url],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   icons: {
     icon: "/media/FavIcon.png",
@@ -24,24 +57,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "PsychiatricService",
-    "name": "Zoraida Psicóloga",
-    "image": "https://zoriweb.es/logo.png", // Placeholder
-    "@id": "https://zoriweb.es",
-    "url": "https://zoriweb.es",
-    "telephone": "+34 692 64 22 52",
+    "@type": "Psychologist",
+    "name": "Zoraida García | Psicóloga en Granada",
+    "image": `${SITE_URL}${OG_IMAGE.url}`,
+    "@id": SITE_URL,
+    "url": SITE_URL,
+    "telephone": CONTACT.phone,
+    "email": CONTACT.email,
+    "priceRange": "€€",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Clínica VIDICO, C. Félix Rodríguez de la Fuente, 27, Local 3",
-      "addressLocality": "Granada",
-      "postalCode": "18006",
-      "addressCountry": "ES"
+      "streetAddress": `${CLINIC.name}, ${CLINIC.street}`,
+      "addressLocality": CLINIC.city,
+      "addressRegion": "Granada",
+      "postalCode": CLINIC.postalCode,
+      "addressCountry": CLINIC.country
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 37.1698,
-      "longitude": -3.6068
+    "areaServed": {
+      "@type": "City",
+      "name": "Granada"
     },
+    "availableLanguage": "es",
+    "sameAs": [CONTACT.instagram],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [

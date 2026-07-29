@@ -4,6 +4,9 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Política de Privacidad | Zoraida | Psicóloga en Granada",
   description: "Política de privacidad del sitio web de Zoraida, psicóloga en Granada. Información sobre el tratamiento de tus datos personales conforme al RGPD.",
+  alternates: {
+    canonical: "/politica-privacidad/",
+  },
 };
 
 export default function PrivacidadPage() {

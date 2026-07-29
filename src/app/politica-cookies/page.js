@@ -4,6 +4,9 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Política de Cookies | Zoraida | Psicóloga en Granada",
   description: "Política de cookies del sitio web de Zoraida, psicóloga en Granada. Información sobre los tipos de cookies utilizadas y cómo gestionarlas.",
+  alternates: {
+    canonical: "/politica-cookies/",
+  },
 };
 
 export default function CookiesPage() {

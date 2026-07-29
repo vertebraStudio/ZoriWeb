@@ -4,6 +4,9 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Aviso Legal | Zoraida | Psicóloga en Granada",
   description: "Aviso legal del sitio web de Zoraida, psicóloga colegiada en Granada. Información sobre el titular, condiciones de uso y responsabilidades.",
+  alternates: {
+    canonical: "/aviso-legal/",
+  },
 };
 
 export default function AvisoLegalPage() {
@@ -34,7 +37,7 @@ export default function AvisoLegalPage() {
                   ["Dirección profesional", "Clínica VIDICO, C. Félix Rodríguez de la Fuente, 27, Local 3, Zaidín, 18006 Granada"],
                   ["Teléfono", "+34 692 64 22 52"],
                   ["Email", "zoripsico@gmail.com"],
-                  ["Sitio web", "www.zoripsico.com"],
+                  ["Sitio web", "www.zoraidagarciapsicologagranada.com"],
                 ]} />
                 <p style={{ marginTop: '16px', fontSize: '0.92rem', fontStyle: 'italic' }}>
                   Como profesional que ejerce una actividad regulada y colegiada en España, Zoraida García Rodríguez se rige por las normas profesionales vigentes en el <strong>Código Deontológico del Psicólogo</strong>, emitido por el Consejo General de la Psicología de España, accesible de manera pública y gratuita a través de la web institucional del <a href="https://www.copao.es" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline' }}>Colegio Oficial de Psicología de Andalucía Oriental (COPAO)</a>.

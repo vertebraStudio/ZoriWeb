@@ -5,7 +5,9 @@ import { useState } from 'react';
 const faqs = [
   {
     question: "¿Qué duración tiene cada sesión?",
-    answer: <>Las sesiones duran <strong>una hora</strong> normalmente. Con niños, los padres entran los primeros 15 minutos para establecer nuevos objetivos y los últimos 15 minutos para ver lo que hemos realizado en sesión.</>
+    answer: <>Las sesiones duran <strong>una hora</strong> normalmente. Con niños, los padres entran los primeros 15 minutos para establecer nuevos objetivos y los últimos 15 minutos para ver lo que hemos realizado en sesión.</>,
+    // Versión en texto plano para el JSON-LD, porque `answer` lleva JSX.
+    plain: "Las sesiones duran una hora normalmente. Con niños, los padres entran los primeros 15 minutos para establecer nuevos objetivos y los últimos 15 minutos para ver lo que hemos realizado en sesión."
   },
   {
     question: "¿Cómo puedo pedir mi primera cita?",
@@ -13,7 +15,7 @@ const faqs = [
   },
   {
     question: "¿Realizas terapia online o solo presencial?",
-    answer: "Ofrezco ambas modalidades. La terapia presencial se realiza en mi consulta en Granada (zona Ronda), mientras que la terapia online se lleva a cabo a través de plataformas seguras de videoconferencia, permitiendo la misma calidad de atención desde la comodidad de tu hogar."
+    answer: "Ofrezco ambas modalidades. La terapia presencial se realiza en mi consulta en Granada (barrio del Zaidín), mientras que la terapia online se lleva a cabo a través de plataformas seguras de videoconferencia, permitiendo la misma calidad de atención desde la comodidad de tu hogar."
   },
   {
     question: "¿Trabajas con niños y adolescentes?",
@@ -41,6 +43,21 @@ const faqs = [
   }
 ];
 
+// Resultado enriquecido de FAQ en Google. El componente se prerenderiza en el
+// export estático, así que este <script> acaba en el HTML servido.
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(({ question, answer, plain }) => ({
+    "@type": "Question",
+    "name": question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": plain ?? answer,
+    },
+  })),
+};
+
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -50,6 +67,10 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="faq">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="container">
         <h2 className="section-title">Preguntas Frecuentes</h2>
         <p className="section-subtitle">Resuelvo tus dudas principales antes de comenzar el proceso terapéutico.</p>

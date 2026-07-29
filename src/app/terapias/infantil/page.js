@@ -6,6 +6,9 @@ import InfantilHero from './InfantilHero';
 export const metadata = {
   title: "Psicología Infantil | Zoraida | Psicóloga en Granada",
   description: "Terapia psicológica para niños en Granada. Acompañamiento especializado en gestión emocional, comportamiento, autoestima y comunicación familiar.",
+  alternates: {
+    canonical: "/terapias/infantil/",
+  },
 };
 
 const senales = [
