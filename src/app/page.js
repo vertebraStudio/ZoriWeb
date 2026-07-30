@@ -67,10 +67,43 @@ const reviews = [
   }
 ];
 
+// Líneas de reseña visibles en la vista compacta. Con el alto de tarjeta de
+// 320px y su relleno, tres líneas es lo máximo que cabe sin desbordar.
+const REVIEW_LINES = 3;
+// Alto de una línea del texto: font-size 1.02rem x line-height 1.75.
+const REVIEW_LINE = 1.785;
+
 export default function Home() {
   const [expandedSection, setExpandedSection] = useState(0);
   const [expandedReviews, setExpandedReviews] = useState({});
   const trackRef = useRef(null);
+  const quoteRefs = useRef({});
+
+  // Qué reseñas necesitan "leer más". Se estima por longitud en el primer
+  // render (el servidor no puede medir) y se corrige midiendo las líneas
+  // reales al montar: el mismo texto ocupa el doble de líneas en móvil que
+  // en escritorio, así que un umbral por caracteres no vale para ambos.
+  const [clampedReviews, setClampedReviews] = useState(() =>
+    Object.fromEntries(reviews.map((rev, idx) => [idx, rev.text.length > 150]))
+  );
+
+  useEffect(() => {
+    const measure = () => {
+      const next = {};
+      Object.entries(quoteRefs.current).forEach(([idx, el]) => {
+        if (!el) return;
+        // El recorte vive en el contenedor, así que el <p> conserva su alto
+        // natural y se puede medir esté desplegada o no.
+        const lineHeight = parseFloat(getComputedStyle(el).lineHeight);
+        next[idx] = el.getBoundingClientRect().height / lineHeight > REVIEW_LINES + 0.5;
+      });
+      setClampedReviews(next);
+    };
+
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
 
   const toggleReviewExpand = (idx) => {
     setExpandedReviews(prev => ({
@@ -741,7 +774,7 @@ export default function Home() {
                   }}
                 >
                   {reviews.map((rev, idx) => {
-                    const isLongText = rev.text.length > 150;
+                    const isLongText = clampedReviews[idx];
                     const isExpanded = expandedReviews[idx];
 
                     return (
@@ -776,12 +809,18 @@ export default function Home() {
                           {/* Smooth Expansion Wrapper */}
                           <div style={{
                             position: 'relative',
-                            maxHeight: isLongText && !isExpanded ? '95px' : '400px',
+                            // Colapsada se recorta por líneas, no por píxeles, para que
+                            // el recorte sea el mismo en móvil y escritorio. Desplegada
+                            // el tope es holgado a propósito: solo existe para que la
+                            // transición pueda animarse, nunca para cortar el texto.
+                            maxHeight: isExpanded ? '1500px' : `${REVIEW_LINES * REVIEW_LINE}rem`,
                             overflow: 'hidden',
                             transition: 'max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                             marginBottom: isLongText ? '10px' : '20px'
                           }}>
-                            <p style={{
+                            <p
+                              ref={(el) => { quoteRefs.current[idx] = el; }}
+                              style={{
                               fontFamily: "'Inter', sans-serif",
                               fontSize: '1.02rem',
                               lineHeight: '1.75',
