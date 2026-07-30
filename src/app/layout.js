@@ -3,6 +3,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollToTop from "@/components/ScrollToTop";
 import CookieBanner from "@/components/CookieBanner";
+import StyledJsxRegistry from "./registry";
 import { SITE_URL, CONTACT, CLINIC } from "@/lib/site";
 
 // El nombre lleva sufijo de versión a propósito: WhatsApp y Facebook cachean la
@@ -104,11 +105,15 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <ScrollReveal />
-        {children}
-        <WhatsAppButton />
-        <ScrollToTop />
-        <CookieBanner />
+        {/* Envuelve todo el body, no solo {children}: el botón de WhatsApp,
+            el de volver arriba y el banner de cookies también usan style jsx. */}
+        <StyledJsxRegistry>
+          <ScrollReveal />
+          {children}
+          <WhatsAppButton />
+          <ScrollToTop />
+          <CookieBanner />
+        </StyledJsxRegistry>
       </body>
     </html>
   );
