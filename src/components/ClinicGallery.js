@@ -4,18 +4,23 @@ import { useState, useEffect, useRef } from 'react';
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
+// Fotos de la consulta. Vacío a propósito: las de abajo son de la consulta
+// anterior y están a la espera de las de la Clínica VIDICO. Con el array vacío
+// la sección muestra el aviso de "próximamente" y el carrusel queda intacto:
+// para reactivarlo basta con volver a poblar este array.
 const photos = [
-  { id: 1, src: `${BASE}/media/consulta1.jpeg`, alt: 'Nuestra Consulta - Recepción' },
-  { id: 2, src: `${BASE}/media/consulta2.jpeg`, alt: 'Nuestra Consulta - Sala de Espera' },
-  { id: 3, src: `${BASE}/media/consulta3.jpeg`, alt: 'Nuestra Consulta - Detalle' },
-  { id: 4, src: `${BASE}/media/consulta4.jpeg`, alt: 'Nuestra Consulta - Sala de Terapia' },
-  { id: 5, src: `${BASE}/media/consulta5.jpeg`, alt: 'Nuestra Consulta - Espacio Infantil/Juvenil' }
+  // { id: 1, src: `${BASE}/media/consulta1.jpeg`, alt: 'Nuestra Consulta - Recepción' },
+  // { id: 2, src: `${BASE}/media/consulta2.jpeg`, alt: 'Nuestra Consulta - Sala de Espera' },
+  // { id: 3, src: `${BASE}/media/consulta3.jpeg`, alt: 'Nuestra Consulta - Detalle' },
+  // { id: 4, src: `${BASE}/media/consulta4.jpeg`, alt: 'Nuestra Consulta - Sala de Terapia' },
+  // { id: 5, src: `${BASE}/media/consulta5.jpeg`, alt: 'Nuestra Consulta - Espacio Infantil/Juvenil' }
 ];
 
 export default function ClinicGallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const timerRef = useRef(null);
+  const hasPhotos = photos.length > 0;
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
@@ -26,46 +31,60 @@ export default function ClinicGallery() {
   };
 
   useEffect(() => {
-    if (!isPaused) {
+    // Sin fotos no se arranca el temporizador: el módulo por cero daría NaN.
+    if (hasPhotos && !isPaused) {
       timerRef.current = setInterval(nextSlide, 5000);
     }
     return () => clearInterval(timerRef.current);
-  }, [isPaused]);
+  }, [hasPhotos, isPaused]);
 
   return (
     <section id="galeria" className="gallery" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
       <div className="container">
         <h2 className="section-title">Nuestra Consulta</h2>
-        <p className="section-subtitle">Un espacio diseñado para tu bienestar y tranquilidad en el centro de Granada.</p>
-        
+        <p className="section-subtitle">Un espacio diseñado para tu bienestar y tranquilidad.</p>
+
         <div className="carousel-wrapper">
-          <button className="carousel-btn prev" onClick={prevSlide} aria-label="Anterior">‹</button>
-          
-          <div className="carousel-inner">
-            <div 
-              className="carousel-track" 
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-              {photos.map((item) => (
-                <div key={item.id} className="carousel-slide">
-                  <img src={item.src} alt={item.alt} className="gallery-image" />
+          {hasPhotos ? (
+            <>
+              <button className="carousel-btn prev" onClick={prevSlide} aria-label="Anterior">‹</button>
+
+              <div className="carousel-inner">
+                <div
+                  className="carousel-track"
+                  style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                >
+                  {photos.map((item) => (
+                    <div key={item.id} className="carousel-slide">
+                      <img src={item.src} alt={item.alt} className="gallery-image" />
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <button className="carousel-btn next" onClick={nextSlide} aria-label="Siguiente">›</button>
+
+              <div className="carousel-dots">
+                {photos.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`dot ${index === currentIndex ? 'active' : ''}`}
+                    onClick={() => setCurrentIndex(index)}
+                    aria-label={`Ir a diapositiva ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          ) : (
+            <div className="carousel-inner gallery-soon">
+              <div className="gallery-soon-content">
+                <span className="gallery-soon-badge">Próximamente</span>
+                <p className="gallery-soon-text">
+                  Estoy preparando las fotos de la consulta para que puedas conocer el espacio antes de tu primera visita.
+                </p>
+              </div>
             </div>
-          </div>
-
-          <button className="carousel-btn next" onClick={nextSlide} aria-label="Siguiente">›</button>
-
-          <div className="carousel-dots">
-            {photos.map((_, index) => (
-              <button 
-                key={index} 
-                className={`dot ${index === currentIndex ? 'active' : ''}`}
-                onClick={() => setCurrentIndex(index)}
-                aria-label={`Ir a diapositiva ${index + 1}`}
-              />
-            ))}
-          </div>
+          )}
         </div>
       </div>
 
@@ -104,6 +123,46 @@ export default function ClinicGallery() {
           width: 100%;
           height: 100%;
           object-fit: cover;
+        }
+
+        /* Estado sin fotos. Reutiliza .carousel-inner para conservar la misma
+           proporción y esquinas que tendrá el carrusel al volver. */
+        .gallery-soon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 24px;
+          background: linear-gradient(135deg, var(--primary-light), var(--soft-purple));
+          box-shadow: none;
+          border: 1px dashed rgba(211, 152, 207, 0.55);
+        }
+
+        .gallery-soon-content {
+          text-align: center;
+          max-width: 420px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 16px;
+        }
+
+        .gallery-soon-badge {
+          font-family: 'Sabon', 'EB Garamond', serif;
+          font-size: 1.6rem;
+          color: var(--accent);
+          letter-spacing: 0.02em;
+        }
+
+        .gallery-soon-text {
+          font-size: 0.95rem;
+          line-height: 1.7;
+          color: var(--text-muted);
+          margin: 0;
+        }
+
+        @media (max-width: 600px) {
+          .gallery-soon-badge { font-size: 1.35rem; }
+          .gallery-soon-text { font-size: 0.88rem; }
         }
 
         .carousel-btn {
