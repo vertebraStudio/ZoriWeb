@@ -165,14 +165,44 @@ export default function Home() {
                   zIndex: 2,
                   boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
                 }}>
-                  <img 
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/perfil2.jpeg`} 
-                    alt="Zoraida - Psicóloga" 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                  />
+                  <div className="about-photo-soon">
+                    <span className="about-photo-soon-badge">Próximamente</span>
+                    <p className="about-photo-soon-text">Estoy preparando nuevas fotos.</p>
+                  </div>
                 </div>
 
                 <style jsx>{`
+                  /* Sustituye a la foto mientras no haya nuevas. Conserva la
+                     proporción 3/4 que tenía la imagen porque .about-image
+                     toma su alto del contenido y si no, colapsaría. */
+                  .about-photo-soon {
+                    width: 100%;
+                    aspect-ratio: 3 / 4;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 14px;
+                    padding: 24px;
+                    text-align: center;
+                    border-radius: inherit;
+                    background: linear-gradient(135deg, var(--primary-light), var(--soft-purple));
+                    border: 1px dashed rgba(211, 152, 207, 0.55);
+                  }
+
+                  .about-photo-soon-badge {
+                    font-family: 'Sabon', 'EB Garamond', serif;
+                    font-size: 1.5rem;
+                    color: var(--accent);
+                  }
+
+                  .about-photo-soon-text {
+                    font-size: 0.95rem;
+                    line-height: 1.7;
+                    color: var(--text-muted);
+                    margin: 0;
+                  }
+
                   .dotted-circle {
                     position: absolute;
                     top: -30px;

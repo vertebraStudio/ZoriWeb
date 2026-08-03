@@ -9,11 +9,11 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
 // la sección muestra el aviso de "próximamente" y el carrusel queda intacto:
 // para reactivarlo basta con volver a poblar este array.
 const photos = [
-  // { id: 1, src: `${BASE}/media/consulta1.jpeg`, alt: 'Nuestra Consulta - Recepción' },
-  // { id: 2, src: `${BASE}/media/consulta2.jpeg`, alt: 'Nuestra Consulta - Sala de Espera' },
-  // { id: 3, src: `${BASE}/media/consulta3.jpeg`, alt: 'Nuestra Consulta - Detalle' },
-  // { id: 4, src: `${BASE}/media/consulta4.jpeg`, alt: 'Nuestra Consulta - Sala de Terapia' },
-  // { id: 5, src: `${BASE}/media/consulta5.jpeg`, alt: 'Nuestra Consulta - Espacio Infantil/Juvenil' }
+  // { id: 1, src: `${BASE}/media/consulta1.jpeg`, alt: 'Mi espacio de trabajo - Recepción' },
+  // { id: 2, src: `${BASE}/media/consulta2.jpeg`, alt: 'Mi espacio de trabajo - Sala de Espera' },
+  // { id: 3, src: `${BASE}/media/consulta3.jpeg`, alt: 'Mi espacio de trabajo - Detalle' },
+  // { id: 4, src: `${BASE}/media/consulta4.jpeg`, alt: 'Mi espacio de trabajo - Sala de Terapia' },
+  // { id: 5, src: `${BASE}/media/consulta5.jpeg`, alt: 'Mi espacio de trabajo - Espacio Infantil/Juvenil' }
 ];
 
 export default function ClinicGallery() {
@@ -41,7 +41,7 @@ export default function ClinicGallery() {
   return (
     <section id="galeria" className="gallery" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
       <div className="container">
-        <h2 className="section-title">Nuestra Consulta</h2>
+        <h2 className="section-title">Mi espacio de trabajo</h2>
         <p className="section-subtitle">Un espacio diseñado para tu bienestar y tranquilidad.</p>
 
         <div className="carousel-wrapper">

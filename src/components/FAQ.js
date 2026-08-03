@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "¿Realizas terapia online o solo presencial?",
-    answer: "Ofrezco ambas modalidades. La terapia presencial se realiza en mi consulta en Granada (barrio del Zaidín), mientras que la terapia online se lleva a cabo a través de plataformas seguras de videoconferencia, permitiendo la misma calidad de atención desde la comodidad de tu hogar."
+    answer: "Ofrezco ambas modalidades. La terapia presencial se realiza en la Clínica VIDICO, en el Zaidín (Granada), mientras que la terapia online se lleva a cabo a través de plataformas seguras de videoconferencia, permitiendo la misma calidad de atención desde la comodidad de tu hogar."
   },
   {
     question: "¿Trabajas con niños y adolescentes?",
