@@ -37,18 +37,22 @@ export default function Header({ solid = false }) {
       <div className="header-inner">
         <div className="logo">
           <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
-            <img 
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ZoriLogo2.png`} 
-              alt="Zoraida Psicóloga" 
-              className="logo-desktop"
-              style={{ height: '55px', width: 'auto' }} 
-            />
-            <img 
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ZoriLogo.png`} 
-              alt="Zoraida Psicóloga" 
-              className="logo-mobile"
-              style={{ height: '38px', width: 'auto' }} 
-            />
+            {/* Antes se renderizaban los dos logos y se ocultaba uno por CSS, con lo
+                que el navegador descargaba ambos. Con <picture> solo baja el que toca.
+                El breakpoint coincide con el de globals.css. */}
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcSet={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ZoriLogo.webp`}
+              />
+              <img
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ZoriLogo2.webp`}
+                alt="Zoraida García, psicóloga en Granada"
+                width={440}
+                height={114}
+                className="logo-img"
+              />
+            </picture>
           </Link>
         </div>
                <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>

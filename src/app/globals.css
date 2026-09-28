@@ -240,16 +240,16 @@ section {
   font-size: 1.4rem;
 }
 
-.logo-mobile {
-  display: none;
+/* Un solo <img> dentro de <picture>: el alto cambia por breakpoint y la
+   fuente la elige el navegador, sin descargar las dos versiones. */
+.logo-img {
+  height: 55px;
+  width: auto;
 }
 
 @media (max-width: 768px) {
-  .logo-desktop {
-    display: none;
-  }
-  .logo-mobile {
-    display: block;
+  .logo-img {
+    height: 38px;
   }
 }
 

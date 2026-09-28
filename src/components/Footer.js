@@ -9,7 +9,11 @@ export default function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <img src={`${BASE}/media/ZoriLogoFooter.png`} alt="Zoraida Psicóloga" className="footer-logo" />
+            <img
+              loading="lazy"
+              decoding="async"
+              width={460}
+              height={122} src={`${BASE}/media/ZoriLogoFooter.webp`} alt="Zoraida Psicóloga" className="footer-logo" />
             <p className="subtitle">Especialista en psicología infantil, adolescentes y adultos.</p>
             <div style={{ display: 'flex', gap: '8px', marginBottom: '20px', flexWrap: 'wrap', marginTop: '5px' }}>
               <span style={{ fontSize: '0.78rem', letterSpacing: '0.5px', fontWeight: 600, padding: '4px 12px', borderRadius: '50px', background: 'transparent', border: '1px solid rgba(255, 255, 255, 0.3)', color: 'rgba(255, 255, 255, 0.85)' }}>
@@ -37,15 +41,27 @@ export default function Footer() {
             <h3 className="footer-title-styled">Contacto</h3>
             <div className="brand-contact">
               <a href="tel:+34692642252">
-                <img src={`${BASE}/media/PhoneIcon.png`} alt="" className="footer-icon" />
+                <img
+              loading="lazy"
+              decoding="async"
+              width={24}
+              height={24} src={`${BASE}/media/PhoneIcon.png`} alt="" className="footer-icon" />
                 +34 692 64 22 52
               </a>
               <a href="mailto:zoripsico@gmail.com">
-                <img src={`${BASE}/media/MailIcon.png`} alt="" className="footer-icon" />
+                <img
+              loading="lazy"
+              decoding="async"
+              width={24}
+              height={24} src={`${BASE}/media/MailIcon.png`} alt="" className="footer-icon" />
                 zoripsico@gmail.com
               </a>
               <a href="https://www.instagram.com/zoripsico/" target="_blank" rel="noopener noreferrer">
-                <img src={`${BASE}/media/IgIcon.png`} alt="" className="footer-icon" />
+                <img
+              loading="lazy"
+              decoding="async"
+              width={24}
+              height={24} src={`${BASE}/media/IgIcon.png`} alt="" className="footer-icon" />
                 Instagram
               </a>
             </div>

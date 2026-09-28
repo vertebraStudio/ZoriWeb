@@ -4,16 +4,15 @@ import { useState, useEffect, useRef } from 'react';
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
-// Fotos de la consulta. Vacío a propósito: las de abajo son de la consulta
-// anterior y están a la espera de las de la Clínica VIDICO. Con el array vacío
-// la sección muestra el aviso de "próximamente" y el carrusel queda intacto:
-// para reactivarlo basta con volver a poblar este array.
+// Fotos de la Clínica VIDICO. Solo apaisadas: el carrusel recorta con
+// object-fit: cover a 16/9 (4/3 en móvil) y una foto vertical perdería más de
+// la mitad del alto. Vaciar este array devuelve la sección al aviso de
+// "próximamente" sin tocar nada más.
 const photos = [
-  // { id: 1, src: `${BASE}/media/consulta1.jpeg`, alt: 'Mi espacio de trabajo - Recepción' },
-  // { id: 2, src: `${BASE}/media/consulta2.jpeg`, alt: 'Mi espacio de trabajo - Sala de Espera' },
-  // { id: 3, src: `${BASE}/media/consulta3.jpeg`, alt: 'Mi espacio de trabajo - Detalle' },
-  // { id: 4, src: `${BASE}/media/consulta4.jpeg`, alt: 'Mi espacio de trabajo - Sala de Terapia' },
-  // { id: 5, src: `${BASE}/media/consulta5.jpeg`, alt: 'Mi espacio de trabajo - Espacio Infantil/Juvenil' }
+  { id: 1, src: `${BASE}/media/consulta-nueva-2.webp`, alt: 'Consulta de Zoraida en Granada: mesa de trabajo y biblioteca infantil', width: 1400, height: 1050 },
+  { id: 2, src: `${BASE}/media/consulta-nueva-6.webp`, alt: 'Dibujos de los niños y mural de las emociones en la consulta', width: 1400, height: 1050 },
+  { id: 3, src: `${BASE}/media/consulta-nueva-7.webp`, alt: 'Rincón de espera con banco y cojines', width: 1400, height: 1050 },
+  { id: 4, src: `${BASE}/media/consulta-nueva-3.webp`, alt: 'Mural de las emociones junto al rincón de espera', width: 1400, height: 1050 }
 ];
 
 export default function ClinicGallery() {
@@ -54,9 +53,17 @@ export default function ClinicGallery() {
                   className="carousel-track"
                   style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                 >
-                  {photos.map((item) => (
+                  {photos.map((item, idx) => (
                     <div key={item.id} className="carousel-slide">
-                      <img src={item.src} alt={item.alt} className="gallery-image" />
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        width={item.width}
+                        height={item.height}
+                        loading={idx === 0 ? undefined : 'lazy'}
+                        decoding="async"
+                        className="gallery-image"
+                      />
                     </div>
                   ))}
                 </div>

@@ -27,7 +27,9 @@ export default function ContactHero() {
         <div className="hero-split-right">
           <div className="hero-img-wrapper">
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec6.png`}
+              width={742}
+              height={887}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec6.webp`}
               alt="Consulta de Zoraida, psicóloga en Granada"
               className="hero-split-img"
             />

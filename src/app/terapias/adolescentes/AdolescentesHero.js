@@ -33,7 +33,9 @@ export default function AdolescentesHero() {
         <div className="hero-split-right">
           <div className="hero-img-wrapper">
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec11.png`}
+              width={743}
+              height={892}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec11.webp`}
               alt="Terapia para adolescentes en Granada"
               className="hero-split-img"
             />

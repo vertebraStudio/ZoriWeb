@@ -285,7 +285,9 @@ export default function ContactoPage() {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
                   <img
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ProfilePic.jpg`}
+              width={680}
+              height={850}
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ProfilePic.webp`}
                     alt="Zoraida"
                     style={{ width: '52px', height: '52px', borderRadius: '50%', objectFit: 'cover', objectPosition: 'top' }}
                   />

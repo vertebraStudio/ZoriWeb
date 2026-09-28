@@ -33,7 +33,9 @@ export default function AdultosHero() {
         <div className="hero-split-right">
           <div className="hero-img-wrapper">
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/adulto1.jpeg`}
+              width={960}
+              height={1707}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/adulto1.webp`}
               alt="Terapia para adultos en Granada"
               className="hero-split-img"
             />

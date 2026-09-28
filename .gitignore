@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Servidor local para revisar el export estático (no forma parte del sitio)
+scripts/serve-out.js

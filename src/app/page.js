@@ -165,44 +165,18 @@ export default function Home() {
                   zIndex: 2,
                   boxShadow: '0 20px 40px rgba(0,0,0,0.1)'
                 }}>
-                  <div className="about-photo-soon">
-                    <span className="about-photo-soon-badge">Próximamente</span>
-                    <p className="about-photo-soon-text">Estoy preparando nuevas fotos.</p>
-                  </div>
+                  <img
+              loading="lazy"
+              decoding="async"
+              width={800}
+              height={1067}
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/consulta-nueva-5.webp`}
+                    alt="Zona infantil de la consulta: juguetes, material de manualidades y biblioteca"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
                 </div>
 
                 <style jsx>{`
-                  /* Sustituye a la foto mientras no haya nuevas. Conserva la
-                     proporción 3/4 que tenía la imagen porque .about-image
-                     toma su alto del contenido y si no, colapsaría. */
-                  .about-photo-soon {
-                    width: 100%;
-                    aspect-ratio: 3 / 4;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 14px;
-                    padding: 24px;
-                    text-align: center;
-                    border-radius: inherit;
-                    background: linear-gradient(135deg, var(--primary-light), var(--soft-purple));
-                    border: 1px dashed rgba(211, 152, 207, 0.55);
-                  }
-
-                  .about-photo-soon-badge {
-                    font-family: 'Sabon', 'EB Garamond', serif;
-                    font-size: 1.5rem;
-                    color: var(--accent);
-                  }
-
-                  .about-photo-soon-text {
-                    font-size: 0.95rem;
-                    line-height: 1.7;
-                    color: var(--text-muted);
-                    margin: 0;
-                  }
-
                   .dotted-circle {
                     position: absolute;
                     top: -30px;
@@ -595,7 +569,11 @@ export default function Home() {
               {/* Infantil */}
               <Link href="/terapias/infantil" style={{ textDecoration: 'none', border: '1px solid #e0e0e0', borderRadius: '16px' }} className="therapy-mini-card">
                 <div style={{ aspectRatio: '4/3', overflow: 'hidden', borderRadius: '16px 16px 0 0' }}>
-                  <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec1.png`} alt="Terapia Infantil" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} className="therapy-mini-img" />
+                  <img
+              loading="lazy"
+              decoding="async"
+              width={743}
+              height={890} src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec1.webp`} alt="Terapia Infantil" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} className="therapy-mini-img" />
                 </div>
                 <div style={{ padding: '20px 20px 22px', backgroundColor: 'white', borderRadius: '0 0 16px 16px' }}>
                   <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px', fontFamily: "'Sabon','EB Garamond',serif" }}>Psicología infantil</h3>
@@ -607,7 +585,11 @@ export default function Home() {
               {/* Adolescentes */}
               <Link href="/terapias/adolescentes" style={{ textDecoration: 'none', border: '1px solid #e0e0e0', borderRadius: '16px' }} className="therapy-mini-card">
                 <div style={{ aspectRatio: '4/3', overflow: 'hidden', borderRadius: '16px 16px 0 0' }}>
-                  <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec2.png`} alt="Psicología para adolescentes" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} className="therapy-mini-img" />
+                  <img
+              loading="lazy"
+              decoding="async"
+              width={745}
+              height={891} src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec2.webp`} alt="Psicología para adolescentes" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} className="therapy-mini-img" />
                 </div>
                 <div style={{ padding: '20px 20px 22px', backgroundColor: 'white', borderRadius: '0 0 16px 16px' }}>
                   <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px', fontFamily: "'Sabon','EB Garamond',serif" }}>Psicología para adolescentes</h3>
@@ -619,7 +601,11 @@ export default function Home() {
               {/* Adultos */}
               <Link href="/terapias/adultos" style={{ textDecoration: 'none', border: '1px solid #e0e0e0', borderRadius: '16px' }} className="therapy-mini-card">
                 <div style={{ aspectRatio: '4/3', overflow: 'hidden', borderRadius: '16px 16px 0 0' }}>
-                  <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/adulto.jpeg`} alt="Psicología para adultos" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} className="therapy-mini-img" />
+                  <img
+              loading="lazy"
+              decoding="async"
+              width={760}
+              height={1012} src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/adulto.webp`} alt="Psicología para adultos" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.4s ease' }} className="therapy-mini-img" />
                 </div>
                 <div style={{ padding: '20px 20px 22px', backgroundColor: 'white', borderRadius: '0 0 16px 16px' }}>
                   <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--text)', marginBottom: '8px', fontFamily: "'Sabon','EB Garamond',serif" }}>Psicología para adultos</h3>

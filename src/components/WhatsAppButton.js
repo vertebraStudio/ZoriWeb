@@ -9,8 +9,12 @@ export default function WhatsAppButton() {
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
     >
-      <img 
-        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/whatsappIcon.png`} 
+      <img
+              loading="lazy"
+              decoding="async"
+              width={130}
+              height={130} 
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/whatsappIcon.webp`} 
         alt="WhatsApp" 
       />
       

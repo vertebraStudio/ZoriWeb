@@ -33,7 +33,9 @@ export default function InfantilHero() {
         <div className="hero-split-right">
           <div className="hero-img-wrapper">
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec10.png`}
+              width={740}
+              height={890}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/rec10.webp`}
               alt="Terapia para niños en Granada"
               className="hero-split-img"
             />
