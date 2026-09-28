@@ -9,9 +9,11 @@ export default function HomeHero() {
 
         {/* Columna izquierda */}
         <div className="home-hero-left">
-          <span className="home-hero-category">PSICÓLOGA EN GRANADA</span>
-
+          {/* "Psicóloga en Granada" va dentro del h1: es la keyword principal y
+              el h1 es el encabezado con más peso de la página. Visualmente no
+              cambia nada, solo deja de ser un <span> suelto encima. */}
           <h1 className="home-hero-title">
+            <span className="home-hero-category">Psicóloga en Granada</span>
             Hola, soy<br />
             <em>Zoraida</em>
           </h1>
@@ -94,7 +96,12 @@ export default function HomeHero() {
           gap: 24px;
         }
 
+        /* Dentro del h1 necesita ser bloque y recuperar el gap de 24px que le
+           daba el flex de .home-hero-left cuando era un hermano suelto. */
         .home-hero-category {
+          display: block;
+          margin-bottom: 24px;
+          line-height: 1.4;
           font-size: 0.8rem;
           font-weight: 600;
           letter-spacing: 0.15em;

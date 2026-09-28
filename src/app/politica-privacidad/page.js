@@ -40,20 +40,20 @@ export default function PrivacidadPage() {
               </LegalSection>
 
               <LegalSection title="2. Datos que Recopilamos">
-                <p>A través del formulario de contacto del sitio web, podemos recopilar los siguientes datos personales:</p>
+                <p>Este sitio web no dispone de formulario de contacto: no recoge ningún dato por sí mismo. El contacto se realiza por los canales que se indican en la web (WhatsApp, teléfono y correo electrónico), y son los datos que tú facilitas al escribir o llamar:</p>
                 <ul>
-                  <li><strong>Nombre y apellidos</strong>: para identificarte y dirigirnos a ti de forma personalizada.</li>
-                  <li><strong>Dirección de correo electrónico</strong>: para poder responderte y gestionar la comunicación contigo.</li>
-                  <li><strong>Número de teléfono</strong> (opcional): para facilitarte el contacto por vía telefónica si así lo prefieres.</li>
-                  <li><strong>Mensaje libre</strong>: el contenido de tu consulta o solicitud de cita.</li>
+                  <li><strong>Nombre</strong>: el que indiques al presentarte.</li>
+                  <li><strong>Número de teléfono</strong>: si contactas por WhatsApp o por llamada.</li>
+                  <li><strong>Dirección de correo electrónico</strong>: si contactas por email.</li>
+                  <li><strong>Contenido del mensaje</strong>: lo que cuentes en tu consulta o solicitud de cita.</li>
                 </ul>
-                <p>No recopilamos datos sensibles de categoría especial (como datos de salud) a través del formulario web. Si en el mensaje incluyes información relativa a tu salud, esta se tratará con la máxima confidencialidad, bajo el secreto profesional propio de la práctica psicológica, tal y como establece el Código Deontológico del Psicólogo.</p>
+                <p>No se solicitan datos sensibles de categoría especial (como datos de salud) por estos canales. Si en el mensaje incluyes información relativa a tu salud, esta se tratará con la máxima confidencialidad, bajo el secreto profesional propio de la práctica psicológica, tal y como establece el Código Deontológico del Psicólogo.</p>
               </LegalSection>
 
               <LegalSection title="3. Finalidad y Base Jurídica del Tratamiento">
                 <p>Los datos personales que nos facilitas serán tratados con las siguientes finalidades y bases legales:</p>
                 <ul>
-                  <li><strong>Gestión de consultas y solicitudes de cita</strong> (base legal: consentimiento del interesado al enviar el formulario; artículo 6.1.a del RGPD).</li>
+                  <li><strong>Gestión de consultas y solicitudes de cita</strong> (base legal: consentimiento del interesado, que se manifiesta al contactar por su propia iniciativa; artículo 6.1.a del RGPD).</li>
                   <li><strong>Comunicación con el usuario</strong> para responder a sus mensajes y resolver dudas (base legal: aplicación de medidas precontractuales o interés legítimo; artículo 6.1.b / 6.1.f del RGPD).</li>
                   <li><strong>Prestación de servicios de asistencia sanitaria (terapia psicológica)</strong>, si se formaliza una relación terapéutica. En este supuesto:
                     <ul>
