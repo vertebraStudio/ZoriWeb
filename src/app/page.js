@@ -170,8 +170,8 @@ export default function Home() {
               decoding="async"
               width={800}
               height={1067}
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/consulta-nueva-5.webp`}
-                    alt="Zona infantil de la consulta: juguetes, material de manualidades y biblioteca"
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/zoraida-sobre-mi.webp`}
+                    alt="Zoraida sentada en el escritorio de su consulta"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                   />
                 </div>
@@ -199,7 +199,7 @@ export default function Home() {
                 <h2 className="section-title" style={{ textAlign: 'left', marginBottom: '10px' }}>Sobre mí</h2>
                 <p className="section-subtitle" style={{ textAlign: 'left', marginLeft: '0', marginBottom: '20px', color: 'var(--primary)' }}>¡Hola! Soy Zoraida, aunque puedes llamarme Zori</p>
                 <p>Soy <strong>psicóloga especializada</strong> en infancia, adolescencia, jóvenes, adultos y familias.</p>
-                <p>Me considero una <strong>persona sensible</strong>, algo que valoro profundamente en mi trabajo, porque creo que sentir y comprender nuestras emociones con intensidad nos permite vivir, conocer y <strong>conectar mejor</strong> con la persona que tengo delante. Como dice Miriam Tirado, es un súper poder.</p>
+                <p>Me considero una <strong>persona sensible</strong>, algo que valoro profundamente en mi trabajo, porque creo que sentir y comprender nuestras emociones con intensidad nos permite vivir, conocer y <strong>conectar mejor</strong> con la persona que tengo delante. Como dice Miriam Tirado, es un superpoder.</p>
                 <p>Los pacientes valoran de mí que trasmito <strong>calma, comprensión sin juicios, atención plena y creatividad</strong>. Además, suelen mencionar que mis terapias son <strong>distendidas</strong>, donde se ríe y se llora cada vez que es necesario.</p>
                 <p>Me apasionan los momentos de calma, las <strong>conversaciones profundas</strong>, el deporte y la naturaleza. Los animales y las plantas forman parte esencial de mi vida. Además, valoro las <strong>relaciones interpersonales sanas</strong> que mantengo con amigos, familia...</p>
 
@@ -219,14 +219,14 @@ export default function Home() {
                   Me gradué en Psicología por la <strong>Universidad de Granada (UGR)</strong> y continué mi especialización con el <strong>Máster en Psicología General Sanitaria (UAL)</strong> en la Universidad de Almería, con especial énfasis en <strong>Psicología Clínica y Neuropsicológica</strong>.
                 </p>
                 <p className="trayectoria-text">
-                  Además colaboré con la universidad en su propia clínica psicológica y realicé una <strong>beca de atención a la diversidad funcional</strong>. He trabajado en Madrid en una clínica multidisciplinar, en Granada en la clínica donde realicé las prácticas y ahora estoy en Granada capital.
+                  Además, colaboré con la universidad en su propia clínica psicológica y realicé una <strong>beca de atención a la diversidad funcional</strong>. He trabajado en Madrid en una clínica multidisciplinar, en Granada en la clínica donde realicé las prácticas y ahora estoy en Granada capital.
                 </p>
               </div>
               <div className="trayectoria-list">
                 <div className="trayectoria-card glass">
                   <span className="trayectoria-card-num">01</span>
                   <div className="trayectoria-card-content">
-                    <h4 className="trayectoria-card-title">Grado Psicología</h4>
+                    <h4 className="trayectoria-card-title">Grado en Psicología</h4>
                     <p className="trayectoria-card-desc">Universidad de Granada</p>
                   </div>
                 </div>
@@ -845,7 +845,7 @@ export default function Home() {
                               textAlign: 'left',
                               margin: 0,
                             }}>
-                              "{rev.text}"
+                              &ldquo;{rev.text}&rdquo;
                             </p>
                             
                             {/* Fade mask for compact view */}

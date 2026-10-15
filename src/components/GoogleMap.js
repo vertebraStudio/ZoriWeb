@@ -1,35 +1,27 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { getConsent, setConsent, CONSENT_CHANGE_EVENT } from "@/lib/cookieConsent";
 
 export default function GoogleMap() {
   const [consentState, setConsentState] = useState("unset"); // "unset" | "accepted" | "rejected"
 
   useEffect(() => {
     const checkConsent = () => {
-      const consent = localStorage.getItem("zori-cookie-consent");
-      if (consent === "accepted") {
-        setConsentState("accepted");
-      } else if (consent === "rejected") {
-        setConsentState("rejected");
-      } else {
-        setConsentState("unset");
-      }
+      setConsentState(getConsent() ?? "unset");
     };
 
     // Listen for changes from the banner or other components
-    window.addEventListener("cookie-consent-change", checkConsent);
+    window.addEventListener(CONSENT_CHANGE_EVENT, checkConsent);
     checkConsent(); // Initial check
 
     return () => {
-      window.removeEventListener("cookie-consent-change", checkConsent);
+      window.removeEventListener(CONSENT_CHANGE_EVENT, checkConsent);
     };
   }, []);
 
   const handleAcceptConsent = () => {
-    localStorage.setItem("zori-cookie-consent", "accepted");
-    window.dispatchEvent(new Event("cookie-consent-change"));
-    setConsentState("accepted");
+    setConsent("accepted");
   };
 
   if (consentState === "accepted") {

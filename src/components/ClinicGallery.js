@@ -9,10 +9,11 @@ const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
 // la mitad del alto. Vaciar este array devuelve la sección al aviso de
 // "próximamente" sin tocar nada más.
 const photos = [
-  { id: 1, src: `${BASE}/media/consulta-nueva-2.webp`, alt: 'Consulta de Zoraida en Granada: mesa de trabajo y biblioteca infantil', width: 1400, height: 1050 },
-  { id: 2, src: `${BASE}/media/consulta-nueva-6.webp`, alt: 'Dibujos de los niños y mural de las emociones en la consulta', width: 1400, height: 1050 },
-  { id: 3, src: `${BASE}/media/consulta-nueva-7.webp`, alt: 'Rincón de espera con banco y cojines', width: 1400, height: 1050 },
-  { id: 4, src: `${BASE}/media/consulta-nueva-3.webp`, alt: 'Mural de las emociones junto al rincón de espera', width: 1400, height: 1050 }
+  { id: 1, src: `${BASE}/media/zoraida-escritorio.webp`, alt: 'Zoraida trabajando en el escritorio de su consulta', width: 1400, height: 1050 },
+  { id: 2, src: `${BASE}/media/consulta-nueva-2.webp`, alt: 'Consulta de Zoraida en Granada: mesa de trabajo y biblioteca infantil', width: 1400, height: 1050 },
+  { id: 3, src: `${BASE}/media/consulta-nueva-6.webp`, alt: 'Dibujos de los niños y mural de las emociones en la consulta', width: 1400, height: 1050 },
+  { id: 4, src: `${BASE}/media/consulta-nueva-7.webp`, alt: 'Rincón de espera con banco y cojines', width: 1400, height: 1050 },
+  { id: 5, src: `${BASE}/media/consulta-nueva-3.webp`, alt: 'Mural de las emociones junto al rincón de espera', width: 1400, height: 1050 }
 ];
 
 export default function ClinicGallery() {

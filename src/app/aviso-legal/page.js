@@ -1,13 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
-  title: "Aviso Legal | Zoraida | Psicóloga en Granada",
+export const metadata = pageMetadata({
+  title: "Aviso legal | Zoraida | Psicóloga en Granada",
   description: "Aviso legal del sitio web de Zoraida, psicóloga colegiada en Granada. Información sobre el titular, condiciones de uso y responsabilidades.",
-  alternates: {
-    canonical: "/aviso-legal/",
-  },
-};
+  path: "/aviso-legal/",
+});
 
 export default function AvisoLegalPage() {
   return (
@@ -18,8 +17,8 @@ export default function AvisoLegalPage() {
         <section className="legal-section-header">
           <div className="container">
             <span style={{ fontSize: '0.85rem', color: '#0E525D', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Legal</span>
-            <h1 style={{ fontSize: '2.5rem', fontFamily: "'EB Garamond', serif", color: 'var(--text)', marginTop: '10px', marginBottom: '10px' }}>Aviso Legal</h1>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: 0 }}>Última actualización: mayo de 2025</p>
+            <h1 style={{ fontSize: '2.5rem', fontFamily: "'EB Garamond', serif", color: 'var(--text)', marginTop: '10px', marginBottom: '10px' }}>Aviso legal</h1>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: 0 }}>Última actualización: julio de 2026</p>
           </div>
         </section>
 
@@ -27,7 +26,7 @@ export default function AvisoLegalPage() {
           <div className="container">
             <div className="legal-content" style={{ maxWidth: '780px' }}>
 
-              <LegalSection title="1. Datos del Titular">
+              <LegalSection title="1. Datos del titular">
                 <p>En cumplimiento con el deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSI-CE), se facilitan los siguientes datos:</p>
                 <LegalTable rows={[
                   ["Titular", "Zoraida García Rodríguez"],
@@ -44,12 +43,12 @@ export default function AvisoLegalPage() {
                 </p>
               </LegalSection>
 
-              <LegalSection title="2. Objeto y Ámbito de Aplicación">
+              <LegalSection title="2. Objeto y ámbito de aplicación">
                 <p>El presente Aviso Legal regula el acceso y uso del sitio web, así como los contenidos, productos y servicios publicados en él. El acceso al sitio web implica la aceptación plena y sin reservas de todos los términos y condiciones establecidos en el presente Aviso Legal.</p>
                 <p>El titular se reserva el derecho a modificar en cualquier momento el contenido de este sitio web, sin previo aviso, por lo que se recomienda al usuario su revisión periódica.</p>
               </LegalSection>
 
-              <LegalSection title="3. Condiciones de Uso">
+              <LegalSection title="3. Condiciones de uso">
                 <p>El usuario se compromete a utilizar el sitio web y los servicios de conformidad con la ley, el presente Aviso Legal, la moral, las buenas costumbres y el orden público. Con carácter enunciativo y no limitativo, el usuario deberá abstenerse de:</p>
                 <ul>
                   <li>Reproducir, copiar, distribuir, poner a disposición o de cualquier otra forma comunicar públicamente, transformar o modificar los contenidos, a menos que se cuente con la autorización del titular.</li>
@@ -58,7 +57,7 @@ export default function AvisoLegalPage() {
                 </ul>
               </LegalSection>
 
-              <LegalSection title="4. Propiedad Intelectual e Industrial">
+              <LegalSection title="4. Propiedad intelectual e industrial">
                 <p>Todos los contenidos del sitio web (textos, imágenes, fotografías, gráficos, logotipos, iconos, software, etc.) son propiedad del titular o de terceros que han autorizado su uso, y están protegidos por las leyes españolas e internacionales de propiedad intelectual e industrial.</p>
                 <p>Queda expresamente prohibida la reproducción total o parcial de los contenidos de este sitio web sin la autorización expresa y por escrito del titular.</p>
               </LegalSection>
@@ -72,7 +71,7 @@ export default function AvisoLegalPage() {
                 </ul>
               </LegalSection>
 
-              <LegalSection title="6. Legislación Aplicable y Jurisdicción">
+              <LegalSection title="6. Legislación aplicable y jurisdicción">
                 <p>La relación entre el titular y el usuario se regirá por la normativa española vigente.</p>
                 <p>Para la resolución de cualquier conflicto derivado del acceso o uso del sitio web, en caso de que el usuario actúe con la condición de consumidor y usuario (paciente), las partes se someterán a la jurisdicción de los Juzgados y Tribunales del domicilio del consumidor. En caso contrario, o de no ostentar dicha condición legal de consumidor, las partes se someten, de mutuo acuerdo y con renuncia a cualquier otro fuero, a los Juzgados y Tribunales de la ciudad de Granada.</p>
               </LegalSection>

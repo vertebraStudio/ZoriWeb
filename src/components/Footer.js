@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { openCookieSettings } from '@/lib/cookieConsent';
 
 export default function Footer() {
   const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -70,9 +71,12 @@ export default function Footer() {
           <div className="footer-legal-col">
             <h3 className="footer-title-styled">Legal</h3>
             <div className="footer-legal-links">
-              <Link href="/aviso-legal">Aviso Legal</Link>
-              <Link href="/politica-privacidad">Política de Privacidad</Link>
-              <Link href="/politica-cookies">Política de Cookies</Link>
+              <Link href="/aviso-legal">Aviso legal</Link>
+              <Link href="/politica-privacidad">Política de privacidad</Link>
+              <Link href="/politica-cookies">Política de cookies</Link>
+              <button type="button" className="footer-cookie-btn" onClick={openCookieSettings}>
+                Configurar cookies
+              </button>
             </div>
           </div>
         </div>
@@ -242,6 +246,23 @@ export default function Footer() {
 
         .footer-legal-links :global(a:hover) {
           color: var(--primary) !important;
+        }
+
+        /* Es un botón (abre el banner, no navega) pero se ve como los enlaces. */
+        .footer-cookie-btn {
+          background: none;
+          border: none;
+          padding: 0;
+          font: inherit;
+          font-size: 0.82rem;
+          color: rgba(255, 255, 255, 0.65);
+          text-align: left;
+          cursor: pointer;
+          transition: var(--transition);
+        }
+
+        .footer-cookie-btn:hover {
+          color: var(--primary);
         }
 
         .footer-bottom {

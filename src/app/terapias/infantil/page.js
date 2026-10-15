@@ -2,14 +2,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from 'next/link';
 import InfantilHero from './InfantilHero';
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
-  title: "Psicología Infantil | Zoraida | Psicóloga en Granada",
+export const metadata = pageMetadata({
+  title: "Psicología infantil | Zoraida | Psicóloga en Granada",
   description: "Terapia psicológica para niños en Granada. Acompañamiento especializado en gestión emocional, comportamiento, autoestima y comunicación familiar.",
-  alternates: {
-    canonical: "/terapias/infantil/",
-  },
-};
+  path: "/terapias/infantil/",
+});
 
 const senales = [
   "¿Tu hijo no sabe describir cómo se siente?",
@@ -31,7 +30,7 @@ const herramientas = [
   "Gestión del comportamiento",
   "Técnicas de relajación",
   "Sesiones de comunicación familiar",
-  "Técnicas respetuosas para la interacción papás e hijos",
+  "Técnicas respetuosas para la interacción entre papás e hijos",
 ];
 
 export default function InfantilPage() {
@@ -158,11 +157,11 @@ export default function InfantilPage() {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
                   <img
-              width={680}
-              height={850}
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ProfilePic.webp`}
+                    width={160}
+                    height={160}
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/zoraida-avatar.webp`}
                     alt="Zoraida"
-                    style={{ width: '52px', height: '52px', borderRadius: '50%', objectFit: 'cover', objectPosition: 'top' }}
+                    style={{ width: '52px', height: '52px', borderRadius: '50%', objectFit: 'cover' }}
                   />
                   <div>
                     <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--text)', margin: 0 }}>Zoraida</p>

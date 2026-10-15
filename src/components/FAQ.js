@@ -72,7 +72,7 @@ export default function FAQ() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <div className="container">
-        <h2 className="section-title">Preguntas Frecuentes</h2>
+        <h2 className="section-title">Preguntas frecuentes</h2>
         <p className="section-subtitle">Resuelvo tus dudas principales antes de comenzar el proceso terapéutico.</p>
         
         <div className="faq-list">

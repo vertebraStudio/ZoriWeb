@@ -8,7 +8,7 @@ export default function InfantilHero() {
       <div className="hero-split-inner">
         {/* Columna izquierda */}
         <div className="hero-split-left">
-          <Link href="/" className="hero-back-btn">
+          <Link href="/#terapias" className="hero-back-btn">
             <span style={{ marginRight: '8px' }}>←</span> Volver a especialidades
           </Link>
           <span className="hero-category">PSICOLOGÍA INFANTIL</span>

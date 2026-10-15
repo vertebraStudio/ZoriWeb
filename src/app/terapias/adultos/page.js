@@ -2,14 +2,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from 'next/link';
 import AdultosHero from './AdultosHero';
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
-  title: "Psicología para Adultos | Zoraida | Psicóloga en Granada",
+export const metadata = pageMetadata({
+  title: "Psicología para adultos | Zoraida | Psicóloga en Granada",
   description: "Terapia psicológica para adultos en Granada. Ansiedad, depresión, terapia de pareja, duelo, gestión del estrés y acompañamiento en crisis vitales.",
-  alternates: {
-    canonical: "/terapias/adultos/",
-  },
-};
+  path: "/terapias/adultos/",
+});
 
 const servicios = [
   {
@@ -140,11 +139,11 @@ export default function AdultosPage() {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
                   <img
-              width={680}
-              height={850}
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ProfilePic.webp`}
+                    width={160}
+                    height={160}
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/zoraida-avatar.webp`}
                     alt="Zoraida"
-                    style={{ width: '52px', height: '52px', borderRadius: '50%', objectFit: 'cover', objectPosition: 'top' }}
+                    style={{ width: '52px', height: '52px', borderRadius: '50%', objectFit: 'cover' }}
                   />
                   <div>
                     <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--text)', margin: 0 }}>Zoraida</p>

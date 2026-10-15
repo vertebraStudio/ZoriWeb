@@ -5,15 +5,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import CookieBanner from "@/components/CookieBanner";
 import StyledJsxRegistry from "./registry";
 import { SITE_URL, CONTACT, CLINIC } from "@/lib/site";
-
-// El nombre lleva sufijo de versión a propósito: WhatsApp y Facebook cachean la
-// previsualización por URL, así que cambiar el fichero en su sitio no bastaría.
-const OG_IMAGE = {
-  url: "/og-image-v2.jpg",
-  width: 1200,
-  height: 630,
-  alt: "Zoraida García, psicóloga infantojuvenil y de adultos en Granada",
-};
+import { OG_IMAGE } from "@/lib/metadata";
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),

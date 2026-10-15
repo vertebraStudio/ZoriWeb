@@ -2,31 +2,36 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { getConsent, setConsent, OPEN_SETTINGS_EVENT } from "@/lib/cookieConsent";
 
 export default function CookieBanner() {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Check if the user has already made a choice
-    const consent = localStorage.getItem("zori-cookie-consent");
-    if (!consent) {
+    // El enlace "Configurar cookies" del pie lo reabre para cambiar o retirar
+    // el consentimiento: retirarlo tiene que ser tan fácil como darlo (AEPD).
+    const open = () => setShowBanner(true);
+    window.addEventListener(OPEN_SETTINGS_EVENT, open);
+
+    let timer;
+    if (!getConsent()) {
       // Small timeout to show banner smoothly
-      const timer = setTimeout(() => {
-        setShowBanner(true);
-      }, 1000);
-      return () => clearTimeout(timer);
+      timer = setTimeout(open, 1000);
     }
+
+    return () => {
+      window.removeEventListener(OPEN_SETTINGS_EVENT, open);
+      clearTimeout(timer);
+    };
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem("zori-cookie-consent", "accepted");
-    window.dispatchEvent(new Event("cookie-consent-change"));
+    setConsent("accepted");
     setShowBanner(false);
   };
 
   const handleReject = () => {
-    localStorage.setItem("zori-cookie-consent", "rejected");
-    window.dispatchEvent(new Event("cookie-consent-change"));
+    setConsent("rejected");
     setShowBanner(false);
   };
 
@@ -40,7 +45,7 @@ export default function CookieBanner() {
           <p className="cookie-banner-text">
             Este sitio web utiliza cookies técnicas necesarias para su funcionamiento y, de forma opcional, cookies de terceros de Google Maps para mostrarte el mapa interactivo de la consulta. Puedes aceptar o rechazar la carga del mapa interactivo con las siguientes opciones de igual valor. Consulta más detalles en nuestra{" "}
             <Link href="/politica-cookies" className="cookie-policy-link">
-              Política de Cookies
+              política de cookies
             </Link>
             .
           </p>

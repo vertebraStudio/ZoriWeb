@@ -46,12 +46,15 @@ export default function HomeHero() {
         {/* Columna derecha: imagen */}
         <div className="home-hero-right">
           <div className="home-hero-img-wrapper">
+            {/* Es lo primero que se ve (en móvil va encima del texto), así que
+                se pide con prioridad alta para que no retrase el LCP. */}
             <img
-              width={680}
-              height={850}
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ProfilePic.webp`}
-              alt="Zoraida, psicóloga en Granada"
+              width={885}
+              height={1180}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/zoraida-hero.webp`}
+              alt="Zoraida, psicóloga en Granada, en su consulta"
               className="home-hero-img"
+              fetchPriority="high"
             />
           </div>
         </div>

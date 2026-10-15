@@ -1,13 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
-  title: "Política de Privacidad | Zoraida | Psicóloga en Granada",
+export const metadata = pageMetadata({
+  title: "Política de privacidad | Zoraida | Psicóloga en Granada",
   description: "Política de privacidad del sitio web de Zoraida, psicóloga en Granada. Información sobre el tratamiento de tus datos personales conforme al RGPD.",
-  alternates: {
-    canonical: "/politica-privacidad/",
-  },
-};
+  path: "/politica-privacidad/",
+});
 
 export default function PrivacidadPage() {
   return (
@@ -18,8 +17,8 @@ export default function PrivacidadPage() {
         <section className="legal-section-header">
           <div className="container">
             <span style={{ fontSize: '0.85rem', color: '#0E525D', fontWeight: 600, letterSpacing: '1px', textTransform: 'uppercase' }}>Legal</span>
-            <h1 style={{ fontSize: '2.5rem', fontFamily: "'EB Garamond', serif", color: 'var(--text)', marginTop: '10px', marginBottom: '10px' }}>Política de Privacidad</h1>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: 0 }}>Última actualización: mayo de 2025</p>
+            <h1 style={{ fontSize: '2.5rem', fontFamily: "'EB Garamond', serif", color: 'var(--text)', marginTop: '10px', marginBottom: '10px' }}>Política de privacidad</h1>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: 0 }}>Última actualización: septiembre de 2026</p>
           </div>
         </section>
 
@@ -27,19 +26,19 @@ export default function PrivacidadPage() {
           <div className="container">
             <div className="legal-content" style={{ maxWidth: '780px' }}>
 
-              <LegalSection title="1. Responsable del Tratamiento">
+              <LegalSection title="1. Responsable del tratamiento">
                 <p>En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo (RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y Garantía de los Derechos Digitales (LOPDGDD), se informa de los siguientes datos del responsable del tratamiento:</p>
                 <LegalTable rows={[
                   ["Titular / Responsable", "Zoraida García Rodríguez"],
                   ["Actividad", "Psicóloga General Sanitaria"],
-                  ["Nº de Colegiada", "AO-12108 (Colegio Oficial de Psicólogos de Andalucía Oriental)"],
+                  ["Nº de Colegiada", "AO-12108 (Colegio Oficial de Psicología de Andalucía Oriental)"],
                   ["Dirección", "Clínica VIDICO, C. Félix Rodríguez de la Fuente, 27, Local 3, Zaidín, 18006 Granada"],
                   ["Email de contacto", "zoripsico@gmail.com"],
                   ["Teléfono", "+34 692 64 22 52"],
                 ]} />
               </LegalSection>
 
-              <LegalSection title="2. Datos que Recopilamos">
+              <LegalSection title="2. Datos que recopilamos">
                 <p>Este sitio web no dispone de formulario de contacto: no recoge ningún dato por sí mismo. El contacto se realiza por los canales que se indican en la web (WhatsApp, teléfono y correo electrónico), y son los datos que tú facilitas al escribir o llamar:</p>
                 <ul>
                   <li><strong>Nombre</strong>: el que indiques al presentarte.</li>
@@ -50,7 +49,7 @@ export default function PrivacidadPage() {
                 <p>No se solicitan datos sensibles de categoría especial (como datos de salud) por estos canales. Si en el mensaje incluyes información relativa a tu salud, esta se tratará con la máxima confidencialidad, bajo el secreto profesional propio de la práctica psicológica, tal y como establece el Código Deontológico del Psicólogo.</p>
               </LegalSection>
 
-              <LegalSection title="3. Finalidad y Base Jurídica del Tratamiento">
+              <LegalSection title="3. Finalidad y base jurídica del tratamiento">
                 <p>Los datos personales que nos facilitas serán tratados con las siguientes finalidades y bases legales:</p>
                 <ul>
                   <li><strong>Gestión de consultas y solicitudes de cita</strong> (base legal: consentimiento del interesado, que se manifiesta al contactar por su propia iniciativa; artículo 6.1.a del RGPD).</li>
@@ -64,12 +63,12 @@ export default function PrivacidadPage() {
                 </ul>
               </LegalSection>
 
-              <LegalSection title="4. Conservación de los Datos">
+              <LegalSection title="4. Conservación de los datos">
                 <p>Los datos personales se conservarán durante el tiempo necesario para atender tu consulta y, en caso de relación terapéutica, durante el tiempo que establezca la normativa aplicable en materia de documentación clínica (Ley 41/2002, de Autonomía del Paciente), con un mínimo de 5 años desde la última intervención.</p>
                 <p>Una vez finalizada la relación y vencidos los plazos legales de conservación, los datos serán suprimidos de forma segura.</p>
               </LegalSection>
 
-              <LegalSection title="5. Destinatarios de los Datos">
+              <LegalSection title="5. Destinatarios de los datos">
                 <p>Los datos personales no serán cedidos ni comunicados a terceros, salvo en los siguientes casos:</p>
                 <ul>
                   <li>Cuando exista una obligación legal que lo requiera.</li>
@@ -78,12 +77,12 @@ export default function PrivacidadPage() {
                 <p>En ningún caso se venderán, alquilarán ni cederán tus datos personales a terceros con fines comerciales.</p>
               </LegalSection>
 
-              <LegalSection title="6. Tus Derechos">
+              <LegalSection title="6. Tus derechos">
                 <p>En virtud del RGPD y la LOPDGDD, tienes derecho a:</p>
                 <ul>
                   <li><strong>Acceso</strong>: obtener confirmación sobre si se están tratando tus datos y acceder a ellos.</li>
                   <li><strong>Rectificación</strong>: solicitar la corrección de datos inexactos o incompletos.</li>
-                  <li><strong>Supresión</strong> ("derecho al olvido"): solicitar la eliminación de tus datos cuando ya no sean necesarios.</li>
+                  <li><strong>Supresión</strong> («derecho al olvido»): solicitar la eliminación de tus datos cuando ya no sean necesarios.</li>
                   <li><strong>Oposición</strong>: oponerte al tratamiento de tus datos en determinadas circunstancias.</li>
                   <li><strong>Limitación del tratamiento</strong>: solicitar que se restrinja el tratamiento de tus datos.</li>
                   <li><strong>Portabilidad</strong>: recibir tus datos en un formato estructurado y de uso común.</li>
@@ -93,11 +92,11 @@ export default function PrivacidadPage() {
                 <p>Asimismo, tienes derecho a presentar una reclamación ante la <strong>Agencia Española de Protección de Datos (AEPD)</strong> en <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a> si consideras que el tratamiento de tus datos infringe la normativa vigente.</p>
               </LegalSection>
 
-              <LegalSection title="7. Confidencialidad y Secreto Profesional">
+              <LegalSection title="7. Confidencialidad y secreto profesional">
                 <p>Como psicóloga sanitaria colegiada, Zoraida García Rodríguez está sujeta al secreto profesional establecido en el Código Deontológico del Psicólogo (artículo 40) y en la Ley 41/2002 de Autonomía del Paciente. Toda la información compartida en el contexto de la relación terapéutica es estrictamente confidencial y no podrá ser divulgada sin el consentimiento expreso del paciente, salvo en los supuestos legalmente establecidos.</p>
               </LegalSection>
 
-              <LegalSection title="8. Seguridad de los Datos">
+              <LegalSection title="8. Seguridad de los datos">
                 <p>El responsable del tratamiento adopta las medidas técnicas y organizativas apropiadas para garantizar un nivel de seguridad adecuado al riesgo, de conformidad con el artículo 32 del RGPD, con el fin de evitar el acceso no autorizado, la pérdida, alteración o revelación no autorizada de los datos personales.</p>
               </LegalSection>
 

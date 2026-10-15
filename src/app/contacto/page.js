@@ -2,14 +2,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GoogleMap from "@/components/GoogleMap";
 import ContactHero from "./ContactHero";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Contacto | Zoraida | Psicóloga en Granada",
   description: "Ponte en contacto con Zoraida, psicóloga en Granada. Solicita tu primera cita o resuelve tus dudas por teléfono, email o WhatsApp.",
-  alternates: {
-    canonical: "/contacto/",
-  },
-};
+  path: "/contacto/",
+});
 
 export default function ContactoPage() {
   return (
@@ -285,11 +284,11 @@ export default function ContactoPage() {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
                   <img
-              width={680}
-              height={850}
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/ProfilePic.webp`}
+                    width={160}
+                    height={160}
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/media/zoraida-avatar.webp`}
                     alt="Zoraida"
-                    style={{ width: '52px', height: '52px', borderRadius: '50%', objectFit: 'cover', objectPosition: 'top' }}
+                    style={{ width: '52px', height: '52px', borderRadius: '50%', objectFit: 'cover' }}
                   />
                   <div>
                     <p style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--text)', margin: 0 }}>Zoraida</p>
@@ -334,7 +333,7 @@ export default function ContactoPage() {
                   }}>⏰</div>
                   <div>
                     <p style={{ fontWeight: 600, fontSize: '0.9rem', color: 'var(--text)', margin: '0 0 2px' }}>Horario</p>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.6 }}>Lunes a Viernes<br />15:00 – 21:00</p>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, lineHeight: 1.6 }}>Lunes a viernes<br />15:00 – 21:00</p>
                   </div>
                 </div>
               </div>
@@ -354,7 +353,7 @@ export default function ContactoPage() {
                   color: 'white',
                   lineHeight: '1.3',
                 }}>
-                  ¿Lista para empezar?
+                  ¿Lista o listo para empezar?
                 </h3>
                 <p style={{ fontSize: '0.9rem', lineHeight: '1.7', color: 'rgba(255,255,255,0.8)', marginBottom: '20px' }}>
                   Escríbeme por WhatsApp — es la forma más rápida de contactar y resolver cualquier duda inicial.
