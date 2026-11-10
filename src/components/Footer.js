@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { openCookieSettings } from '@/lib/cookieConsent';
+import CookieSettingsButton from '@/components/CookieSettingsButton';
 
 export default function Footer() {
   const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -74,9 +74,7 @@ export default function Footer() {
               <Link href="/aviso-legal">Aviso legal</Link>
               <Link href="/politica-privacidad">Política de privacidad</Link>
               <Link href="/politica-cookies">Política de cookies</Link>
-              <button type="button" className="footer-cookie-btn" onClick={openCookieSettings}>
-                Configurar cookies
-              </button>
+              <CookieSettingsButton className="footer-cookie-btn" />
             </div>
           </div>
         </div>
@@ -249,7 +247,7 @@ export default function Footer() {
         }
 
         /* Es un botón (abre el banner, no navega) pero se ve como los enlaces. */
-        .footer-cookie-btn {
+        .footer-legal-links :global(.footer-cookie-btn) {
           background: none;
           border: none;
           padding: 0;
@@ -261,7 +259,7 @@ export default function Footer() {
           transition: var(--transition);
         }
 
-        .footer-cookie-btn:hover {
+        .footer-legal-links :global(.footer-cookie-btn:hover) {
           color: var(--primary);
         }
 

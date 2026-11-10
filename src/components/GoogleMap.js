@@ -1,14 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { getConsent, setConsent, CONSENT_CHANGE_EVENT } from "@/lib/cookieConsent";
+import { getConsent, setConsent, hasConsent, CONSENT_CHANGE_EVENT } from "@/lib/cookieConsent";
 
 export default function GoogleMap() {
   const [consentState, setConsentState] = useState("unset"); // "unset" | "accepted" | "rejected"
 
   useEffect(() => {
     const checkConsent = () => {
-      setConsentState(getConsent() ?? "unset");
+      if (!getConsent()) setConsentState("unset");
+      else setConsentState(hasConsent("maps") ? "accepted" : "rejected");
     };
 
     // Listen for changes from the banner or other components
@@ -20,8 +21,9 @@ export default function GoogleMap() {
     };
   }, []);
 
+  // Solo activa el mapa: si hubiera más categorías, se respetan las demás.
   const handleAcceptConsent = () => {
-    setConsent("accepted");
+    setConsent({ ...getConsent(), maps: true });
   };
 
   if (consentState === "accepted") {
